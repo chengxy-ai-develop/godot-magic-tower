@@ -1,0 +1,277 @@
+{
+  "version": "2.0",
+  "last_updated": "2026-03-13",
+  "items": [
+    {
+      "id": "potion_small",
+      "name": "小血瓶",
+      "description": "恢复少量生命值",
+      "type": "consumable",
+      "effect": {"hp": 200},
+      "sprite": "res://assets/items/potion_small.png",
+      "rarity": "common",
+      "price": 10
+    },
+    {
+      "id": "potion_medium",
+      "name": "中血瓶",
+      "description": "恢复中量生命值",
+      "type": "consumable",
+      "effect": {"hp": 500},
+      "sprite": "res://assets/items/potion_medium.png",
+      "rarity": "uncommon",
+      "price": 25
+    },
+    {
+      "id": "potion_large",
+      "name": "大血瓶",
+      "description": "恢复大量生命值",
+      "type": "consumable",
+      "effect": {"hp": 1000},
+      "sprite": "res://assets/items/potion_large.png",
+      "rarity": "rare",
+      "price": 50
+    },
+    {
+      "id": "gem_red_small",
+      "name": "小红宝石",
+      "description": "增加少量攻击力",
+      "type": "permanent",
+      "effect": {"attack": 3},
+      "sprite": "res://assets/items/gem_red_small.png",
+      "rarity": "common",
+      "price": 20
+    },
+    {
+      "id": "gem_red_large",
+      "name": "大红宝石",
+      "description": "增加大量攻击力",
+      "type": "permanent",
+      "effect": {"attack": 10},
+      "sprite": "res://assets/items/gem_red_large.png",
+      "rarity": "rare",
+      "price": 100
+    },
+    {
+      "id": "gem_blue_small",
+      "name": "小蓝宝石",
+      "description": "增加少量防御力",
+      "type": "permanent",
+      "effect": {"defense": 3},
+      "sprite": "res://assets/items/gem_blue_small.png",
+      "rarity": "common",
+      "price": 20
+    },
+    {
+      "id": "gem_blue_large",
+      "name": "大蓝宝石",
+      "description": "增加大量防御力",
+      "type": "permanent",
+      "effect": {"defense": 10},
+      "sprite": "res://assets/items/gem_blue_large.png",
+      "rarity": "rare",
+      "price": 100
+    },
+    {
+      "id": "key_yellow",
+      "name": "黄钥匙",
+      "description": "打开黄色门",
+      "type": "key",
+      "effect": {},
+      "sprite": "res://assets/items/key_yellow.png",
+      "rarity": "common",
+      "price": 0
+    },
+    {
+      "id": "key_blue",
+      "name": "蓝钥匙",
+      "description": "打开蓝色门",
+      "type": "key",
+      "effect": {},
+      "sprite": "res://assets/items/key_blue.png",
+      "rarity": "uncommon",
+      "price": 0
+    },
+    {
+      "id": "key_red",
+      "name": "红钥匙",
+      "description": "打开红色门",
+      "type": "key",
+      "effect": {},
+      "sprite": "res://assets/items/key_red.png",
+      "rarity": "rare",
+      "price": 0
+    },
+    {
+      "id": "sword_iron",
+      "name": "铁剑",
+      "description": "普通的铁剑，比木剑锋利",
+      "type": "equipment",
+      "slot": "weapon",
+      "effect": {"attack": 10},
+      "sprite": "res://assets/items/sword_iron.png",
+      "rarity": "common",
+      "price": 50,
+      "requirement": {"level": 1}
+    },
+    {
+      "id": "sword_steel",
+      "name": "钢剑",
+      "description": "锋利的钢剑，骑士标配",
+      "type": "equipment",
+      "slot": "weapon",
+      "effect": {"attack": 20},
+      "sprite": "res://assets/items/sword_steel.png",
+      "rarity": "uncommon",
+      "price": 150,
+      "requirement": {"level": 5}
+    },
+    {
+      "id": "sword_silver",
+      "name": "银剑",
+      "description": "镶银的长剑，对魔物有特效",
+      "type": "equipment",
+      "slot": "weapon",
+      "effect": {"attack": 35},
+      "sprite": "res://assets/items/sword_silver.png",
+      "rarity": "rare",
+      "price": 400,
+      "requirement": {"level": 15}
+    },
+    {
+      "id": "sword_gold",
+      "name": "金剑",
+      "description": "黄金铸就的神剑，传说之物",
+      "type": "equipment",
+      "slot": "weapon",
+      "effect": {"attack": 60},
+      "sprite": "res://assets/items/sword_gold.png",
+      "rarity": "epic",
+      "price": 1000,
+      "requirement": {"level": 30}
+    },
+    {
+      "id": "shield_iron",
+      "name": "铁盾",
+      "description": "普通的铁盾，能抵挡基础攻击",
+      "type": "equipment",
+      "slot": "shield",
+      "effect": {"defense": 10},
+      "sprite": "res://assets/items/shield_iron.png",
+      "rarity": "common",
+      "price": 50,
+      "requirement": {"level": 1}
+    },
+    {
+      "id": "shield_steel",
+      "name": "钢盾",
+      "description": "坚固的钢盾，士兵最爱",
+      "type": "equipment",
+      "slot": "shield",
+      "effect": {"defense": 20},
+      "sprite": "res://assets/items/shield_steel.png",
+      "rarity": "uncommon",
+      "price": 150,
+      "requirement": {"level": 5}
+    },
+    {
+      "id": "shield_silver",
+      "name": "银盾",
+      "description": "镶银的塔盾，防御力卓越",
+      "type": "equipment",
+      "slot": "shield",
+      "effect": {"defense": 35},
+      "sprite": "res://assets/items/shield_silver.png",
+      "rarity": "rare",
+      "price": 400,
+      "requirement": {"level": 15}
+    },
+    {
+      "id": "shield_gold",
+      "name": "金盾",
+      "description": "黄金守护之盾，神器级别",
+      "type": "equipment",
+      "slot": "shield",
+      "effect": {"defense": 60},
+      "sprite": "res://assets/items/shield_gold.png",
+      "rarity": "epic",
+      "price": 1000,
+      "requirement": {"level": 30}
+    },
+    {
+      "id": "wing_random",
+      "name": "随机传送翼",
+      "description": "使用后随机传送到某一楼层",
+      "type": "consumable",
+      "effect": {"teleport": "random"},
+      "sprite": "res://assets/items/wing_random.png",
+      "rarity": "rare",
+      "price": 200
+    },
+    {
+      "id": "wing_floor",
+      "name": "楼层传送翼",
+      "description": "使用后选择传送到任意已到达楼层",
+      "type": "consumable",
+      "effect": {"teleport": "select"},
+      "sprite": "res://assets/items/wing_floor.png",
+      "rarity": "epic",
+      "price": 500
+    },
+    {
+      "id": "hammer_break",
+      "name": "破墙锤",
+      "description": "可以破坏特殊墙壁",
+      "type": "consumable",
+      "effect": {"break_wall": true},
+      "sprite": "res://assets/items/hammer_break.png",
+      "rarity": "rare",
+      "price": 300
+    },
+    {
+      "id": "crystal_magic",
+      "name": "魔力水晶",
+      "description": "蕴含魔力的水晶，使用后可临时提升属性",
+      "type": "consumable",
+      "effect": {"attack": 50, "defense": 50, "duration": 300},
+      "sprite": "res://assets/items/crystal_magic.png",
+      "rarity": "epic",
+      "price": 800
+    },
+    {
+      "id": "book_secret",
+      "name": "秘密之书",
+      "description": "记载了魔塔秘密的古籍",
+      "type": "quest",
+      "effect": {},
+      "sprite": "res://assets/items/book_secret.png",
+      "rarity": "legendary",
+      "price": 0
+    },
+    {
+      "id": "coin_lucky",
+      "name": "幸运金币",
+      "description": "据说能带来好运的金币，收集后有意想不到的效果",
+      "type": "collectible",
+      "effect": {"luck": 1},
+      "sprite": "res://assets/items/coin_lucky.png",
+      "rarity": "rare",
+      "price": 0
+    }
+  ],
+  "item_categories": {
+    "consumable": "消耗品",
+    "permanent": "永久道具",
+    "key": "钥匙",
+    "equipment": "装备",
+    "quest": "任务物品",
+    "collectible": "收集品"
+  },
+  "rarity_levels": {
+    "common": {"name": "普通", "color": "#FFFFFF"},
+    "uncommon": {"name": "优秀", "color": "#1EFF00"},
+    "rare": {"name": "精良", "color": "#0070DD"},
+    "epic": {"name": "史诗", "color": "#A335EE"},
+    "legendary": {"name": "传说", "color": "#FF8000"}
+  }
+}
