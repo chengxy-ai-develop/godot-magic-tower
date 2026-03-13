@@ -1,0 +1,493 @@
+{
+  "version": "2.0",
+  "last_updated": "2026-03-13",
+  "monsters": [
+    {
+      "id": "slime_green",
+      "name": "绿色史莱姆",
+      "description": "最弱的魔物，软绵绵的",
+      "sprite": "res://assets/monsters/slime_green.png",
+      "stats": {
+        "hp": 50,
+        "attack": 15,
+        "defense": 5,
+        "gold": 5,
+        "experience": 2
+      },
+      "behavior": "passive",
+      "floor_range": [1, 5],
+      "rarity": "common"
+    },
+    {
+      "id": "slime_red",
+      "name": "红色史莱姆",
+      "description": "愤怒的史莱姆，攻击力更强",
+      "sprite": "res://assets/monsters/slime_red.png",
+      "stats": {
+        "hp": 80,
+        "attack": 25,
+        "defense": 8,
+        "gold": 8,
+        "experience": 4
+      },
+      "behavior": "aggressive",
+      "floor_range": [6, 10],
+      "rarity": "common"
+    },
+    {
+      "id": "bat",
+      "name": "蝙蝠",
+      "description": "夜间活动的吸血蝙蝠",
+      "sprite": "res://assets/monsters/bat.png",
+      "stats": {
+        "hp": 60,
+        "attack": 30,
+        "defense": 3,
+        "gold": 6,
+        "experience": 3
+      },
+      "behavior": "flying",
+      "floor_range": [1, 10],
+      "rarity": "common",
+      "abilities": ["dodge"]
+    },
+    {
+      "id": "skeleton",
+      "name": "骷髅兵",
+      "description": "复活的骷髅战士",
+      "sprite": "res://assets/monsters/skeleton.png",
+      "stats": {
+        "hp": 100,
+        "attack": 35,
+        "defense": 10,
+        "gold": 10,
+        "experience": 5
+      },
+      "behavior": "melee",
+      "floor_range": [3, 15],
+      "rarity": "common"
+    },
+    {
+      "id": "orc",
+      "name": "兽人",
+      "description": "强壮的类人魔物",
+      "sprite": "res://assets/monsters/orc.png",
+      "stats": {
+        "hp": 150,
+        "attack": 45,
+        "defense": 15,
+        "gold": 15,
+        "experience": 8
+      },
+      "behavior": "melee",
+      "floor_range": [5, 20],
+      "rarity": "uncommon"
+    },
+    {
+      "id": "goblin",
+      "name": "哥布林",
+      "description": "狡猾的小型魔物，喜欢偷袭",
+      "sprite": "res://assets/monsters/goblin.png",
+      "stats": {
+        "hp": 70,
+        "attack": 40,
+        "defense": 8,
+        "gold": 12,
+        "experience": 6
+      },
+      "behavior": "sneaky",
+      "floor_range": [3, 12],
+      "rarity": "common",
+      "abilities": ["critical_hit"]
+    },
+    {
+      "id": "zombie",
+      "name": "僵尸",
+      "description": "不死的亡者，行动缓慢但顽强",
+      "sprite": "res://assets/monsters/zombie.png",
+      "stats": {
+        "hp": 200,
+        "attack": 30,
+        "defense": 5,
+        "gold": 8,
+        "experience": 7
+      },
+      "behavior": "undead",
+      "floor_range": [8, 25],
+      "rarity": "common",
+      "abilities": ["regenerate"]
+    },
+    {
+      "id": "ghost",
+      "name": "幽灵",
+      "description": "飘忽不定的灵体，物理攻击效果差",
+      "sprite": "res://assets/monsters/ghost.png",
+      "stats": {
+        "hp": 120,
+        "attack": 50,
+        "defense": 20,
+        "gold": 20,
+        "experience": 12
+      },
+      "behavior": "ethereal",
+      "floor_range": [15, 30],
+      "rarity": "uncommon",
+      "abilities": ["phase", "curse"]
+    },
+    {
+      "id": "knight_dark",
+      "name": "黑暗骑士",
+      "description": "被诅咒的骑士，装备精良",
+      "sprite": "res://assets/monsters/knight_dark.png",
+      "stats": {
+        "hp": 300,
+        "attack": 70,
+        "defense": 40,
+        "gold": 50,
+        "experience": 25
+      },
+      "behavior": "elite",
+      "floor_range": [20, 35],
+      "rarity": "rare",
+      "abilities": ["counter", "shield_bash"]
+    },
+    {
+      "id": "wizard",
+      "name": "邪恶法师",
+      "description": "使用黑暗魔法的法师",
+      "sprite": "res://assets/monsters/wizard.png",
+      "stats": {
+        "hp": 180,
+        "attack": 90,
+        "defense": 15,
+        "gold": 40,
+        "experience": 20
+      },
+      "behavior": "caster",
+      "floor_range": [18, 32],
+      "rarity": "uncommon",
+      "abilities": ["fireball", "lightning", "teleport"]
+    },
+    {
+      "id": "minotaur",
+      "name": "牛头怪",
+      "description": "半人半牛的巨兽，力量惊人",
+      "sprite": "res://assets/monsters/minotaur.png",
+      "stats": {
+        "hp": 400,
+        "attack": 80,
+        "defense": 30,
+        "gold": 60,
+        "experience": 30
+      },
+      "behavior": "berserker",
+      "floor_range": [25, 40],
+      "rarity": "rare",
+      "abilities": ["charge", "enrage"]
+    },
+    {
+      "id": "dragon_whelp",
+      "name": "幼龙",
+      "description": "年轻的龙，已经相当危险",
+      "sprite": "res://assets/monsters/dragon_whelp.png",
+      "stats": {
+        "hp": 350,
+        "attack": 85,
+        "defense": 35,
+        "gold": 80,
+        "experience": 35
+      },
+      "behavior": "dragon",
+      "floor_range": [30, 45],
+      "rarity": "rare",
+      "abilities": ["breath_fire", "fly", "intimidate"]
+    },
+    {
+      "id": "lich",
+      "name": "巫妖",
+      "description": "不死的亡灵法师，极其危险",
+      "sprite": "res://assets/monsters/lich.png",
+      "stats": {
+        "hp": 500,
+        "attack": 100,
+        "defense": 25,
+        "gold": 100,
+        "experience": 50
+      },
+      "behavior": "undead_caster",
+      "floor_range": [35, 48],
+      "rarity": "epic",
+      "abilities": ["death_touch", "summon_undead", "life_drain"]
+    },
+    {
+      "id": "demon_lord",
+      "name": "恶魔领主",
+      "description": "来自深渊的恶魔，塔中的强者",
+      "sprite": "res://assets/monsters/demon_lord.png",
+      "stats": {
+        "hp": 800,
+        "attack": 120,
+        "defense": 50,
+        "gold": 200,
+        "experience": 80
+      },
+      "behavior": "boss",
+      "floor_range": [40, 49],
+      "rarity": "epic",
+      "abilities": ["hellfire", "summon_demon", "fear_aura", "regenerate"]
+    },
+    {
+      "id": "guardian_final",
+      "name": "最终守护者",
+      "description": "魔塔的最终守护者，守护着塔的终极秘密",
+      "sprite": "res://assets/monsters/guardian_final.png",
+      "stats": {
+        "hp": 1500,
+        "attack": 150,
+        "defense": 80,
+        "gold": 500,
+        "experience": 200
+      },
+      "behavior": "final_boss",
+      "floor_range": [50, 50],
+      "rarity": "legendary",
+      "abilities": ["divine_strike", "holy_shield", "resurrection", "time_stop"]
+    },
+    {
+      "id": "mushroom",
+      "name": "毒蘑菇",
+      "description": "会释放毒气的蘑菇怪",
+      "sprite": "res://assets/monsters/mushroom.png",
+      "stats": {
+        "hp": 40,
+        "attack": 20,
+        "defense": 2,
+        "gold": 3,
+        "experience": 2
+      },
+      "behavior": "stationary",
+      "floor_range": [1, 8],
+      "rarity": "common",
+      "abilities": ["poison_cloud"]
+    },
+    {
+      "id": "spider_giant",
+      "name": "巨型蜘蛛",
+      "description": "体型巨大的蜘蛛，会吐丝",
+      "sprite": "res://assets/monsters/spider_giant.png",
+      "stats": {
+        "hp": 130,
+        "attack": 45,
+        "defense": 12,
+        "gold": 18,
+        "experience": 10
+      },
+      "behavior": "ambush",
+      "floor_range": [10, 22],
+      "rarity": "uncommon",
+      "abilities": ["web", "poison_bite"]
+    },
+    {
+      "id": "golem_stone",
+      "name": "石魔像",
+      "description": "由石头构成的魔像，防御力极高",
+      "sprite": "res://assets/monsters/golem_stone.png",
+      "stats": {
+        "hp": 500,
+        "attack": 60,
+        "defense": 80,
+        "gold": 70,
+        "experience": 35
+      },
+      "behavior": "construct",
+      "floor_range": [28, 42],
+      "rarity": "rare",
+      "abilities": ["stone_skin", "earthquake"]
+    },
+    {
+      "id": "vampire",
+      "name": "吸血鬼",
+      "description": "高贵的不死生物，以血液为食",
+      "sprite": "res://assets/monsters/vampire.png",
+      "stats": {
+        "hp": 280,
+        "attack": 75,
+        "defense": 30,
+        "gold": 80,
+        "experience": 40
+      },
+      "behavior": "undead_elite",
+      "floor_range": [22, 38],
+      "rarity": "rare",
+      "abilities": ["life_drain", "bat_form", "hypnosis"]
+    },
+    {
+      "id": "angel_corrupt",
+      "name": "堕落天使",
+      "description": "被黑暗腐蚀的天使，拥有强大的力量",
+      "sprite": "res://assets/monsters/angel_corrupt.png",
+      "stats": {
+        "hp": 600,
+        "attack": 110,
+        "defense": 45,
+        "gold": 150,
+        "experience": 70
+      },
+      "behavior": "fallen",
+      "floor_range": [38, 47],
+      "rarity": "epic",
+      "abilities": ["holy_fire", "divine_judgment", "resurrection"]
+    },
+    {
+      "id": "treasure_mimic",
+      "name": "宝箱怪",
+      "description": "伪装成宝箱的魔物，偷袭冒险者",
+      "sprite": "res://assets/monsters/treasure_mimic.png",
+      "stats": {
+        "hp": 150,
+        "attack": 55,
+        "defense": 20,
+        "gold": 100,
+        "experience": 15
+      },
+      "behavior": "mimic",
+      "floor_range": [5, 30],
+      "rarity": "uncommon",
+      "abilities": ["surprise_attack", "consume_item"]
+    },
+    {
+      "id": "wraith",
+      "name": "怨灵",
+      "description": "充满怨恨的灵魂，会诅咒活人",
+      "sprite": "res://assets/monsters/wraith.png",
+      "stats": {
+        "hp": 160,
+        "attack": 65,
+        "defense": 10,
+        "gold": 25,
+        "experience": 18
+      },
+      "behavior": "spectral",
+      "floor_range": [20, 35],
+      "rarity": "uncommon",
+      "abilities": ["curse", "possess", "wail"]
+    },
+    {
+      "id": "hydra",
+      "name": "九头蛇",
+      "description": "多头巨蛇，砍掉一个头会长出两个",
+      "sprite": "res://assets/monsters/hydra.png",
+      "stats": {
+        "hp": 700,
+        "attack": 95,
+        "defense": 40,
+        "gold": 180,
+        "experience": 75
+      },
+      "behavior": "regenerator",
+      "floor_range": [32, 45],
+      "rarity": "epic",
+      "abilities": ["multi_attack", "regrow_head", "poison_breath"]
+    },
+    {
+      "id": "phoenix_dark",
+      "name": "暗黑凤凰",
+      "description": "被黑暗力量腐蚀的凤凰，浴火重生",
+      "sprite": "res://assets/monsters/phoenix_dark.png",
+      "stats": {
+        "hp": 550,
+        "attack": 105,
+        "defense": 35,
+        "gold": 160,
+        "experience": 65
+      },
+      "behavior": "rebirth",
+      "floor_range": [36, 48],
+      "rarity": "epic",
+      "abilities": ["rebirth", "dark_flame", "phoenix_fire"]
+    },
+    {
+      "id": "chaos_knight",
+      "name": "混沌骑士",
+      "description": "效忠于混沌之神的骑士，实力深不可测",
+      "sprite": "res://assets/monsters/chaos_knight.png",
+      "stats": {
+        "hp": 900,
+        "attack": 130,
+        "defense": 60,
+        "gold": 250,
+        "experience": 100
+      },
+      "behavior": "chaos_champion",
+      "floor_range": [42, 49],
+      "rarity": "legendary",
+      "abilities": ["chaos_strike", "void_shield", "dimensional_cut"]
+    }
+  ],
+  "behavior_types": {
+    "passive": "被动型 - 不主动攻击",
+    "aggressive": "主动型 - 主动追击",
+    "flying": "飞行型 - 无视地形",
+    "melee": "近战型 - 标准近战",
+    "caster": "法师型 - 远程魔法攻击",
+    "undead": "亡灵型 - 免疫部分状态",
+    "ethereal": "灵体型 - 物理抗性高",
+    "elite": "精英型 - 强化属性",
+    "boss": "首领型 - 特殊技能",
+    "final_boss": "最终 Boss - 多阶段战斗"
+  },
+  "rarity_levels": {
+    "common": {"name": "普通", "color": "#FFFFFF", "spawn_rate": 50},
+    "uncommon": {"name": "优秀", "color": "#1EFF00", "spawn_rate": 30},
+    "rare": {"name": "精良", "color": "#0070DD", "spawn_rate": 15},
+    "epic": {"name": "史诗", "color": "#A335EE", "spawn_rate": 4},
+    "legendary": {"name": "传说", "color": "#FF8000", "spawn_rate": 1}
+  },
+  "ability_system": {
+    "dodge": "闪避 - 一定概率躲避攻击",
+    "critical_hit": "暴击 - 一定概率造成双倍伤害",
+    "regenerate": "再生 - 每回合恢复生命值",
+    "phase": "虚化 - 免疫物理攻击",
+    "curse": "诅咒 - 降低玩家属性",
+    "counter": "反击 - 受到攻击时反击",
+    "shield_bash": "盾击 - 眩晕玩家",
+    "fireball": "火球术 - 远程火焰伤害",
+    "lightning": "闪电链 - 连锁闪电伤害",
+    "teleport": "传送 - 随机移动位置",
+    "charge": "冲锋 - 首次攻击伤害翻倍",
+    "enrage": "狂暴 - 低血量时攻击力提升",
+    "breath_fire": "龙息 - 范围火焰伤害",
+    "fly": "飞行 - 无视地形障碍",
+    "intimidate": "威吓 - 降低玩家攻击力",
+    "death_touch": "死亡之触 - 即死攻击",
+    "summon_undead": "召唤亡灵 - 召唤骷髅助战",
+    "life_drain": "生命吸取 - 伤害转化为治疗",
+    "hellfire": "地狱火 - 大范围火焰伤害",
+    "summon_demon": "召唤恶魔 - 召唤小恶魔",
+    "fear_aura": "恐惧光环 - 降低玩家属性",
+    "divine_strike": "神圣打击 - 高伤害神圣攻击",
+    "holy_shield": "神圣护盾 - 吸收伤害",
+    "resurrection": "复活 - 死亡后复活一次",
+    "time_stop": "时间停止 - 暂停玩家行动",
+    "poison_cloud": "毒云 - 范围中毒效果",
+    "web": "蛛网 - 束缚玩家",
+    "poison_bite": "毒咬 - 中毒持续伤害",
+    "stone_skin": "石肤 - 大幅提升防御",
+    "earthquake": "地震 - 范围伤害",
+    "bat_form": "蝙蝠形态 - 变身躲避攻击",
+    "hypnosis": "催眠 - 使玩家跳过回合",
+    "surprise_attack": "偷袭 - 首次攻击伤害翻倍",
+    "consume_item": "吞噬道具 - 随机消耗玩家道具",
+    "possess": "附身 - 控制玩家一回合",
+    "wail": "哀嚎 - 降低玩家攻击力",
+    "multi_attack": "多重攻击 - 同时攻击多次",
+    "regrow_head": "再生头颅 - 恢复生命值",
+    "poison_breath": "毒息 - 范围中毒",
+    "rebirth": "重生 - 死亡后复活并强化",
+    "dark_flame": "暗焰 - 持续燃烧伤害",
+    "phoenix_fire": "凤凰之火 - 复活时爆炸伤害",
+    "chaos_strike": "混沌打击 - 无视防御",
+    "void_shield": "虚空护盾 - 吸收魔法伤害",
+    "dimensional_cut": "次元斩 - 高伤害无视闪避"
+  }
+}
