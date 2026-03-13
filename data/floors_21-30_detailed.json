@@ -1,0 +1,333 @@
+{
+  "version": "1.0",
+  "created": "2026-03-14",
+  "region": "寒冰之塔 (21-30 层)",
+  "description": "进入寒冰之塔，极寒环境会持续造成伤害。需要寻找温暖之源或快速通过。敌人多为冰属性生物。",
+  "new_mechanics": [
+    "极寒环境：每步损失 2%HP，某些区域损失更多",
+    "温暖之源：某些房间有火堆，可以恢复体温",
+    "冰面滑行：某些地面是冰面，会滑行直到撞到墙壁",
+    "冰块障碍：需要特定道具或攻击才能打破",
+    "冻结陷阱：踩中后无法移动数回合"
+  ],
+  "floors": [
+    {
+      "floor_id": 21,
+      "name": "寒冰之塔 - 第 21 层",
+      "difficulty": "困难",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "ice_golem", "x": 4, "y": 4},
+        {"id": "ice_golem", "x": 12, "y": 4},
+        {"id": "dark_knight", "x": 8, "y": 8},
+        {"id": "wolf", "x": 4, "y": 12},
+        {"id": "wolf", "x": 12, "y": 12},
+        {"id": "skeleton", "x": 8, "y": 5}
+      ],
+      "items": [
+        {"id": "potion_super", "x": 1, "y": 8},
+        {"id": "armor_ice", "x": 15, "y": 8},
+        {"id": "key_blue", "x": 8, "y": 14},
+        {"id": "fire_crystal_small", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "blue", "x": 8, "y": 1, "locked": true},
+        {"type": "red", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["极寒环境：每步损失 2%HP", "温暖之源：(8,8) 处有火堆"]
+    },
+    {
+      "floor_id": 22,
+      "name": "寒冰之塔 - 第 22 层",
+      "difficulty": "困难",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "ice_golem", "x": 3, "y": 3},
+        {"id": "ice_golem", "x": 13, "y": 3},
+        {"id": "ice_wolf", "x": 8, "y": 8},
+        {"id": "dark_knight", "x": 5, "y": 12},
+        {"id": "dark_knight", "x": 11, "y": 12}
+      ],
+      "items": [
+        {"id": "potion_super", "x": 1, "y": 8},
+        {"id": "sword_ice", "x": 15, "y": 8},
+        {"id": "key_yellow", "x": 8, "y": 14},
+        {"id": "gem_blue_large", "x": 1, "y": 15}
+      ],
+      "doors": [
+        {"type": "yellow", "x": 8, "y": 1, "locked": true},
+        {"type": "blue", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["冰面滑行：东西走廊是冰面"]
+    },
+    {
+      "floor_id": 23,
+      "name": "寒冰之塔 - 第 23 层",
+      "difficulty": "困难",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "ice_golem", "x": 4, "y": 4},
+        {"id": "ice_golem", "x": 12, "y": 4},
+        {"id": "ice_wolf", "x": 8, "y": 8},
+        {"id": "ice_wolf", "x": 4, "y": 12},
+        {"id": "ice_wolf", "x": 12, "y": 12},
+        {"id": "lich", "x": 8, "y": 5}
+      ],
+      "items": [
+        {"id": "potion_legendary", "x": 1, "y": 8},
+        {"id": "shield_ice", "x": 15, "y": 8},
+        {"id": "key_red", "x": 8, "y": 14},
+        {"id": "fire_crystal_medium", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "red", "x": 8, "y": 1, "locked": true},
+        {"type": "yellow", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["冰块障碍：需要攻击打破", "隐藏房间：打破 (1,8) 处冰块"]
+    },
+    {
+      "floor_id": 24,
+      "name": "寒冰之塔 - 第 24 层",
+      "difficulty": "专家",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "frost_mage", "x": 5, "y": 5},
+        {"id": "frost_mage", "x": 11, "y": 5},
+        {"id": "ice_golem", "x": 8, "y": 8},
+        {"id": "ice_wolf", "x": 5, "y": 11},
+        {"id": "ice_wolf", "x": 11, "y": 11},
+        {"id": "lich", "x": 8, "y": 4}
+      ],
+      "items": [
+        {"id": "potion_legendary", "x": 1, "y": 8},
+        {"id": "armor_frost", "x": 15, "y": 8},
+        {"id": "key_blue", "x": 8, "y": 14, "count": 2},
+        {"id": "gem_purple_large", "x": 1, "y": 15}
+      ],
+      "doors": [
+        {"type": "blue", "x": 8, "y": 1, "locked": true},
+        {"type": "red", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "npcs": [
+        {"id": "frozen_adventurer", "x": 15, "y": 15, "dialog": "我...我被困在这里很久了...小心冰霜法师，他会冻结你..."}
+      ],
+      "special_features": ["冻结陷阱：随机位置有冻结陷阱"]
+    },
+    {
+      "floor_id": 25,
+      "name": "寒冰之塔 - 第 25 层",
+      "difficulty": "专家",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "frost_mage", "x": 4, "y": 4},
+        {"id": "frost_mage", "x": 12, "y": 4},
+        {"id": "frost_mage", "x": 4, "y": 12},
+        {"id": "frost_mage", "x": 12, "y": 12},
+        {"id": "ice_golem", "x": 8, "y": 8},
+        {"id": "ice_wolf", "x": 8, "y": 4},
+        {"id": "ice_wolf", "x": 8, "y": 12}
+      ],
+      "items": [
+        {"id": "potion_legendary", "x": 1, "y": 8},
+        {"id": "sword_frost", "x": 15, "y": 8},
+        {"id": "key_yellow", "x": 8, "y": 14, "count": 2},
+        {"id": "fire_crystal_large", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "yellow", "x": 8, "y": 1, "locked": true},
+        {"type": "blue", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["冰面迷宫：大部分地面是冰面", "温暖之源：四个角落有火堆"]
+    },
+    {
+      "floor_id": 26,
+      "name": "寒冰之塔 - 第 26 层",
+      "difficulty": "专家",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "ice_dragon_whelp", "x": 5, "y": 5},
+        {"id": "ice_dragon_whelp", "x": 11, "y": 5},
+        {"id": "frost_mage", "x": 8, "y": 8},
+        {"id": "ice_golem", "x": 5, "y": 11},
+        {"id": "ice_golem", "x": 11, "y": 11},
+        {"id": "lich", "x": 8, "y": 4}
+      ],
+      "items": [
+        {"id": "potion_legendary", "x": 1, "y": 8},
+        {"id": "staff_frost", "x": 15, "y": 8},
+        {"id": "key_red", "x": 8, "y": 14},
+        {"id": "gem_diamond_medium", "x": 1, "y": 15}
+      ],
+      "doors": [
+        {"type": "red", "x": 8, "y": 1, "locked": true},
+        {"type": "yellow", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["极寒环境：每步损失 3%HP"]
+    },
+    {
+      "floor_id": 27,
+      "name": "寒冰之塔 - 第 27 层",
+      "difficulty": "专家",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "ice_dragon_whelp", "x": 4, "y": 4},
+        {"id": "ice_dragon_whelp", "x": 12, "y": 4},
+        {"id": "ice_dragon_whelp", "x": 4, "y": 12},
+        {"id": "ice_dragon_whelp", "x": 12, "y": 12},
+        {"id": "frost_mage", "x": 8, "y": 8},
+        {"id": "ice_golem", "x": 8, "y": 5},
+        {"id": "ice_golem", "x": 8, "y": 11}
+      ],
+      "items": [
+        {"id": "potion_mythical", "x": 1, "y": 8},
+        {"id": "armor_dragon_ice", "x": 15, "y": 8},
+        {"id": "key_blue", "x": 8, "y": 14, "count": 3},
+        {"id": "gem_star_medium", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "blue", "x": 8, "y": 1, "locked": true},
+        {"type": "red", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["冰块障碍：多处冰块阻挡路径"]
+    },
+    {
+      "floor_id": 28,
+      "name": "寒冰之塔 - 第 28 层",
+      "difficulty": "大师",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "frost_lord", "x": 5, "y": 5},
+        {"id": "frost_lord", "x": 11, "y": 5},
+        {"id": "ice_dragon_whelp", "x": 8, "y": 8},
+        {"id": "frost_mage", "x": 5, "y": 11},
+        {"id": "frost_mage", "x": 11, "y": 11},
+        {"id": "lich", "x": 8, "y": 4}
+      ],
+      "items": [
+        {"id": "potion_mythical", "x": 1, "y": 8},
+        {"id": "sword_glacier", "x": 15, "y": 8},
+        {"id": "key_yellow", "x": 8, "y": 14, "count": 3},
+        {"id": "fire_crystal_huge", "x": 1, "y": 15}
+      ],
+      "doors": [
+        {"type": "yellow", "x": 8, "y": 1, "locked": true},
+        {"type": "blue", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "npcs": [
+        {"id": "ice_spirit", "x": 15, "y": 15, "dialog": "冰霜领主的力量来自寒冰之心...找到它，你就能战胜他。"}
+      ],
+      "special_features": ["神秘冰灵：提供重要提示"]
+    },
+    {
+      "floor_id": 29,
+      "name": "寒冰之塔 - 第 29 层",
+      "difficulty": "大师",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "frost_lord", "x": 4, "y": 4},
+        {"id": "frost_lord", "x": 12, "y": 4},
+        {"id": "frost_lord", "x": 4, "y": 12},
+        {"id": "frost_lord", "x": 12, "y": 12},
+        {"id": "ice_dragon_whelp", "x": 8, "y": 8},
+        {"id": "frost_mage", "x": 8, "y": 4},
+        {"id": "frost_mage", "x": 8, "y": 12}
+      ],
+      "items": [
+        {"id": "potion_mythical", "x": 1, "y": 8},
+        {"id": "shield_glacier", "x": 15, "y": 8},
+        {"id": "key_red", "x": 8, "y": 14, "count": 3},
+        {"id": "gem_diamond_large", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "red", "x": 8, "y": 1, "locked": true},
+        {"type": "yellow", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["传送阵迷宫 + 冰面滑行"]
+    },
+    {
+      "floor_id": 30,
+      "name": "寒冰之塔 - 第 30 层",
+      "difficulty": "Boss 层",
+      "size": {"width": 21, "height": 21},
+      "enemies": [
+        {"id": "boss_ice_queen", "x": 10, "y": 10, "is_boss": true},
+        {"id": "frost_lord", "x": 5, "y": 5},
+        {"id": "frost_lord", "x": 15, "y": 5},
+        {"id": "frost_lord", "x": 5, "y": 15},
+        {"id": "frost_lord", "x": 15, "y": 15},
+        {"id": "ice_dragon_whelp", "x": 10, "y": 5},
+        {"id": "ice_dragon_whelp", "x": 10, "y": 15},
+        {"id": "ice_dragon_whelp", "x": 5, "y": 10},
+        {"id": "ice_dragon_whelp", "x": 15, "y": 10}
+      ],
+      "items": [
+        {"id": "potion_mythical", "x": 1, "y": 10},
+        {"id": "crown_ice", "x": 19, "y": 10},
+        {"id": "key_magic", "x": 10, "y": 2},
+        {"id": "gem_star_large", "x": 1, "y": 1},
+        {"id": "heart_of_ice", "x": 19, "y": 19}
+      ],
+      "doors": [
+        {"type": "magic", "x": 10, "y": 1, "locked": true},
+        {"type": "red", "x": 10, "y": 19, "locked": false}
+      ],
+      "stairs": {"up": {"x": 10, "y": 1}, "down": {"x": 10, "y": 19}},
+      "npcs": [
+        {"id": "frozen_princess", "x": 1, "y": 1, "dialog": "我被冰封了太久...冰霜女王的力量来自寒冰之心，摧毁它才能打败她。"}
+      ],
+      "special_features": [
+        "Boss 战：冰霜女王 (冰属性攻击，召唤冰龙)",
+        "先清理 4 个冰霜领主和 4 个冰龙幼崽",
+        "Boss 会冻结玩家数回合",
+        "击败 Boss 后解救被冻公主，获得魔法钥匙和寒冰之心"
+      ],
+      "boss_info": {
+        "id": "boss_ice_queen",
+        "name": "冰霜女王",
+        "hp": 1200,
+        "attack": 120,
+        "defense": 60,
+        "special": ["冻结攻击", "召唤冰龙", "暴风雪范围攻击", "寒冰护盾"],
+        "reward": ["魔法钥匙", "冰霜王冠", "寒冰之心", "大量金币"]
+      }
+    }
+  ],
+  "new_enemies": [
+    {"id": "ice_golem", "name": "冰魔像", "difficulty": "困难", "desc": "由寒冰构成的巨人，高防御"},
+    {"id": "ice_wolf", "name": "冰原狼", "difficulty": "困难", "desc": "生活在冰原的狼，敏捷高"},
+    {"id": "frost_mage", "name": "冰霜法师", "difficulty": "专家", "desc": "精通冰霜魔法的法师"},
+    {"id": "ice_dragon_whelp", "name": "冰龙幼崽", "difficulty": "专家", "desc": "幼年冰龙，会喷吐寒气"},
+    {"id": "frost_lord", "name": "冰霜领主", "difficulty": "大师", "desc": "冰霜领域的统治者"},
+    {"id": "boss_ice_queen", "name": "冰霜女王", "difficulty": "Boss", "desc": "寒冰之塔的女王，掌控极寒之力"}
+  ],
+  "new_items": [
+    {"id": "fire_crystal_small", "name": "小火晶", "effect": "抵御寒冷，恢复 50HP"},
+    {"id": "fire_crystal_medium", "name": "中火晶", "effect": "抵御寒冷，恢复 150HP"},
+    {"id": "fire_crystal_large", "name": "大火晶", "effect": "抵御寒冷，恢复 300HP"},
+    {"id": "fire_crystal_huge", "name": "超大火晶", "effect": "抵御寒冷，恢复 500HP"},
+    {"id": "armor_ice", "name": "冰甲", "effect": "防御 +40，冰抗 +20%"},
+    {"id": "armor_frost", "name": "霜甲", "effect": "防御 +55，冰抗 +30%"},
+    {"id": "armor_dragon_ice", "name": "冰龙甲", "effect": "防御 +70，冰抗 +40%"},
+    {"id": "sword_ice", "name": "寒冰之剑", "effect": "攻击 +45"},
+    {"id": "sword_frost", "name": "冰霜之剑", "effect": "攻击 +60"},
+    {"id": "sword_glacier", "name": "冰川之剑", "effect": "攻击 +75"},
+    {"id": "shield_ice", "name": "冰盾", "effect": "防御 +45"},
+    {"id": "shield_glacier", "name": "冰川盾", "effect": "防御 +65"},
+    {"id": "staff_frost", "name": "冰霜法杖", "effect": "攻击 +65"},
+    {"id": "crown_ice", "name": "冰霜王冠", "effect": "全属性 +30"},
+    {"id": "heart_of_ice", "name": "寒冰之心", "effect": "关键道具，免疫寒冷"},
+    {"id": "potion_mythical", "name": "神话药水", "effect": "恢复 1500HP"},
+    {"id": "gem_star_medium", "name": "中星星宝石", "value": "5000 金币"},
+    {"id": "gem_star_large", "name": "大星星宝石", "value": "8000 金币"}
+  ],
+  "progression": "30 层后进入火焰之塔区域 (31-40 层)"
+}
