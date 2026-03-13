@@ -1,0 +1,358 @@
+{
+  "version": "1.0",
+  "created": "2026-03-14",
+  "region": "虚空之塔 (41-50 层)",
+  "description": "进入虚空之塔，空间扭曲，时间混乱。这里是塔的顶点，也是最危险的地方。敌人来自虚空，拥有超越常理的力量。最终 Boss 等待着你。",
+  "new_mechanics": [
+    "空间扭曲：某些区域移动方向会反转",
+    "时间混乱：某些区域行动速度变慢",
+    "虚空裂缝：随机出现，传送玩家到随机位置",
+    "虚空侵蚀：持续损失 HP 和 MP(如果有)",
+    "幻影敌人：某些敌人是幻影，免疫物理攻击",
+    "虚空护盾：某些敌人有虚空护盾，需要特定攻击打破"
+  ],
+  "floors": [
+    {
+      "floor_id": 41,
+      "name": "虚空之塔 - 第 41 层",
+      "difficulty": "专家",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "void_spawn", "x": 4, "y": 4},
+        {"id": "void_spawn", "x": 12, "y": 4},
+        {"id": "dark_knight", "x": 8, "y": 8},
+        {"id": "lich", "x": 4, "y": 12},
+        {"id": "lich", "x": 12, "y": 12},
+        {"id": "frost_lord", "x": 8, "y": 5}
+      ],
+      "items": [
+        {"id": "potion_eternal", "x": 1, "y": 8},
+        {"id": "armor_void", "x": 15, "y": 8},
+        {"id": "key_blue", "x": 8, "y": 14},
+        {"id": "void_crystal_small", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "blue", "x": 8, "y": 1, "locked": true},
+        {"type": "red", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["虚空侵蚀：每步损失 2%HP", "空间扭曲：东西走廊方向反转"]
+    },
+    {
+      "floor_id": 42,
+      "name": "虚空之塔 - 第 42 层",
+      "difficulty": "专家",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "void_spawn", "x": 3, "y": 3},
+        {"id": "void_spawn", "x": 13, "y": 3},
+        {"id": "void_knight", "x": 8, "y": 8},
+        {"id": "fire_lord", "x": 5, "y": 12},
+        {"id": "fire_lord", "x": 11, "y": 12}
+      ],
+      "items": [
+        {"id": "potion_eternal", "x": 1, "y": 8},
+        {"id": "sword_void", "x": 15, "y": 8},
+        {"id": "key_yellow", "x": 8, "y": 14},
+        {"id": "gem_star_large", "x": 1, "y": 15}
+      ],
+      "doors": [
+        {"type": "yellow", "x": 8, "y": 1, "locked": true},
+        {"type": "blue", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["时间混乱：行动速度减半", "虚空裂缝：随机传送"]
+    },
+    {
+      "floor_id": 43,
+      "name": "虚空之塔 - 第 43 层",
+      "difficulty": "大师",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "void_spawn", "x": 4, "y": 4},
+        {"id": "void_spawn", "x": 12, "y": 4},
+        {"id": "void_knight", "x": 8, "y": 8},
+        {"id": "void_knight", "x": 4, "y": 12},
+        {"id": "void_knight", "x": 12, "y": 12},
+        {"id": "void_mage", "x": 8, "y": 5}
+      ],
+      "items": [
+        {"id": "potion_infinity", "x": 1, "y": 8},
+        {"id": "shield_void", "x": 15, "y": 8},
+        {"id": "key_red", "x": 8, "y": 14},
+        {"id": "void_crystal_medium", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "red", "x": 8, "y": 1, "locked": true},
+        {"type": "yellow", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["幻影敌人：部分敌人免疫物理攻击", "隐藏房间：(1,8) 处有秘密"]
+    },
+    {
+      "floor_id": 44,
+      "name": "虚空之塔 - 第 44 层",
+      "difficulty": "大师",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "void_mage", "x": 5, "y": 5},
+        {"id": "void_mage", "x": 11, "y": 5},
+        {"id": "void_spawn", "x": 8, "y": 8},
+        {"id": "void_knight", "x": 5, "y": 11},
+        {"id": "void_knight", "x": 11, "y": 11},
+        {"id": "fire_lord", "x": 8, "y": 4}
+      ],
+      "items": [
+        {"id": "potion_infinity", "x": 1, "y": 8},
+        {"id": "armor_darkness", "x": 15, "y": 8},
+        {"id": "key_blue", "x": 8, "y": 14, "count": 2},
+        {"id": "gem_void_small", "x": 1, "y": 15}
+      ],
+      "doors": [
+        {"type": "blue", "x": 8, "y": 1, "locked": true},
+        {"type": "red", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "npcs": [
+        {"id": "lost_soul", "x": 15, "y": 15, "dialog": "我的灵魂...被虚空吞噬了...虚空之主...他在等待..."}
+      ],
+      "special_features": ["虚空护盾：某些敌人需要魔法攻击打破"]
+    },
+    {
+      "floor_id": 45,
+      "name": "虚空之塔 - 第 45 层",
+      "difficulty": "大师",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "void_mage", "x": 4, "y": 4},
+        {"id": "void_mage", "x": 12, "y": 4},
+        {"id": "void_mage", "x": 4, "y": 12},
+        {"id": "void_mage", "x": 12, "y": 12},
+        {"id": "void_knight", "x": 8, "y": 8},
+        {"id": "void_spawn", "x": 8, "y": 4},
+        {"id": "void_spawn", "x": 8, "y": 12}
+      ],
+      "items": [
+        {"id": "potion_infinity", "x": 1, "y": 8},
+        {"id": "sword_darkness", "x": 15, "y": 8},
+        {"id": "key_yellow", "x": 8, "y": 14, "count": 2},
+        {"id": "void_crystal_large", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "yellow", "x": 8, "y": 1, "locked": true},
+        {"type": "blue", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["空间扭曲 + 时间混乱叠加", "虚空裂缝频繁出现"]
+    },
+    {
+      "floor_id": 46,
+      "name": "虚空之塔 - 第 46 层",
+      "difficulty": "传奇",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "void_dragon_whelp", "x": 5, "y": 5},
+        {"id": "void_dragon_whelp", "x": 11, "y": 5},
+        {"id": "void_mage", "x": 8, "y": 8},
+        {"id": "void_knight", "x": 5, "y": 11},
+        {"id": "void_knight", "x": 11, "y": 11},
+        {"id": "void_lord", "x": 8, "y": 4}
+      ],
+      "items": [
+        {"id": "potion_infinity", "x": 1, "y": 8},
+        {"id": "staff_void", "x": 15, "y": 8},
+        {"id": "key_red", "x": 8, "y": 14},
+        {"id": "gem_void_medium", "x": 1, "y": 15}
+      ],
+      "doors": [
+        {"type": "red", "x": 8, "y": 1, "locked": true},
+        {"type": "yellow", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["虚空侵蚀：每步损失 3%HP"]
+    },
+    {
+      "floor_id": 47,
+      "name": "虚空之塔 - 第 47 层",
+      "difficulty": "传奇",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "void_dragon_whelp", "x": 4, "y": 4},
+        {"id": "void_dragon_whelp", "x": 12, "y": 4},
+        {"id": "void_dragon_whelp", "x": 4, "y": 12},
+        {"id": "void_dragon_whelp", "x": 12, "y": 12},
+        {"id": "void_mage", "x": 8, "y": 8},
+        {"id": "void_knight", "x": 8, "y": 5},
+        {"id": "void_knight", "x": 8, "y": 11}
+      ],
+      "items": [
+        {"id": "potion_transcendent", "x": 1, "y": 8},
+        {"id": "armor_dragon_void", "x": 15, "y": 8},
+        {"id": "key_blue", "x": 8, "y": 14, "count": 3},
+        {"id": "gem_void_large", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "blue", "x": 8, "y": 1, "locked": true},
+        {"type": "red", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["幻影迷宫：部分墙壁是幻影"]
+    },
+    {
+      "floor_id": 48,
+      "name": "虚空之塔 - 第 48 层",
+      "difficulty": "传奇",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "void_lord", "x": 5, "y": 5},
+        {"id": "void_lord", "x": 11, "y": 5},
+        {"id": "void_dragon_whelp", "x": 8, "y": 8},
+        {"id": "void_mage", "x": 5, "y": 11},
+        {"id": "void_mage", "x": 11, "y": 11},
+        {"id": "fire_lord", "x": 8, "y": 4}
+      ],
+      "items": [
+        {"id": "potion_transcendent", "x": 1, "y": 8},
+        {"id": "sword_chaos", "x": 15, "y": 8},
+        {"id": "key_yellow", "x": 8, "y": 14, "count": 3},
+        {"id": "void_crystal_huge", "x": 1, "y": 15}
+      ],
+      "doors": [
+        {"type": "yellow", "x": 8, "y": 1, "locked": true},
+        {"type": "blue", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "npcs": [
+        {"id": "ancient_hero", "x": 15, "y": 15, "dialog": "我曾是挑战者...但失败了。虚空之主的力量超越想象...你需要四颗元素之心才能战胜他。"}
+      ],
+      "special_features": ["古代英雄之魂：提供最终提示"]
+    },
+    {
+      "floor_id": 49,
+      "name": "虚空之塔 - 第 49 层",
+      "difficulty": "神话",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "void_lord", "x": 4, "y": 4},
+        {"id": "void_lord", "x": 12, "y": 4},
+        {"id": "void_lord", "x": 4, "y": 12},
+        {"id": "void_lord", "x": 12, "y": 12},
+        {"id": "void_dragon_whelp", "x": 8, "y": 8},
+        {"id": "void_mage", "x": 8, "y": 4},
+        {"id": "void_mage", "x": 8, "y": 12}
+      ],
+      "items": [
+        {"id": "potion_transcendent", "x": 1, "y": 8},
+        {"id": "shield_chaos", "x": 15, "y": 8},
+        {"id": "key_red", "x": 8, "y": 14, "count": 3},
+        {"id": "gem_chaos", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "red", "x": 8, "y": 1, "locked": true},
+        {"type": "yellow", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["所有虚空机制叠加", "最终挑战前的试炼"]
+    },
+    {
+      "floor_id": 50,
+      "name": "虚空之塔 - 第 50 层",
+      "difficulty": "最终 Boss 层",
+      "size": {"width": 25, "height": 25},
+      "enemies": [
+        {"id": "boss_void_lord", "x": 12, "y": 12, "is_boss": true},
+        {"id": "void_lord", "x": 5, "y": 5},
+        {"id": "void_lord", "x": 19, "y": 5},
+        {"id": "void_lord", "x": 5, "y": 19},
+        {"id": "void_lord", "x": 19, "y": 19},
+        {"id": "void_dragon_whelp", "x": 12, "y": 5},
+        {"id": "void_dragon_whelp", "x": 12, "y": 19},
+        {"id": "void_dragon_whelp", "x": 5, "y": 12},
+        {"id": "void_dragon_whelp", "x": 19, "y": 12},
+        {"id": "void_mage", "x": 8, "y": 8},
+        {"id": "void_mage", "x": 16, "y": 8},
+        {"id": "void_mage", "x": 8, "y": 16},
+        {"id": "void_mage", "x": 16, "y": 16}
+      ],
+      "items": [
+        {"id": "potion_godlike", "x": 1, "y": 12},
+        {"id": "weapon_chaos", "x": 23, "y": 12},
+        {"id": "key_divine", "x": 12, "y": 2},
+        {"id": "gem_godlike", "x": 1, "y": 1},
+        {"id": "heart_of_void", "x": 23, "y": 23},
+        {"id": "crown_of_king", "x": 1, "y": 23}
+      ],
+      "doors": [
+        {"type": "divine", "x": 12, "y": 1, "locked": true},
+        {"type": "red", "x": 12, "y": 23, "locked": false}
+      ],
+      "stairs": {"up": {"x": 12, "y": 1}, "down": {"x": 12, "y": 23}},
+      "npcs": [
+        {"id": "trapped_mage", "x": 1, "y": 1, "dialog": "你终于来了...四颗元素之心 (寒冰、火焰、迷雾、试炼) 是击败虚空之主的关键。用它们的力量打破他的虚空护盾！"}
+      ],
+      "special_features": [
+        "最终 Boss 战：虚空之主 (多阶段战斗)",
+        "阶段 1: 清理 4 个虚空领主和 4 个火龙幼崽和 4 个虚空法师",
+        "阶段 2: Boss 战 - 虚空之主 (使用四颗元素之心打破护盾)",
+        "阶段 3: 真身战 - 虚空之主真身 (血量恢复，攻击翻倍)",
+        "击败 Boss 后解救被困法师，获得神王之冠，解锁真结局"
+      ],
+      "boss_info": {
+        "id": "boss_void_lord",
+        "name": "虚空之主",
+        "hp": 3000,
+        "attack": 200,
+        "defense": 100,
+        "phase2_hp": 2000,
+        "phase2_attack": 250,
+        "phase2_defense": 80,
+        "special": ["虚空侵蚀", "召唤虚空生物", "空间扭曲攻击", "时间停止", "虚空护盾 (需元素之心打破)", "湮灭射线"],
+        "reward": ["神王之冠", "虚空之心", "混沌武器", "终极宝藏", "真结局解锁"]
+      }
+    }
+  ],
+  "new_enemies": [
+    {"id": "void_spawn", "name": "虚空爪牙", "difficulty": "专家", "desc": "来自虚空的低级生物，数量众多"},
+    {"id": "void_knight", "name": "虚空骑士", "difficulty": "大师", "desc": "被虚空腐蚀的骑士，拥有虚空力量"},
+    {"id": "void_mage", "name": "虚空法师", "difficulty": "大师", "desc": "精通虚空魔法的法师，可以召唤幻影"},
+    {"id": "void_dragon_whelp", "name": "虚空龙幼崽", "difficulty": "传奇", "desc": "来自虚空的龙，拥有空间扭曲能力"},
+    {"id": "void_lord", "name": "虚空领主", "difficulty": "传奇", "desc": "虚空领域的领主，仅次于虚空之主"},
+    {"id": "boss_void_lord", "name": "虚空之主", "difficulty": "最终 Boss", "desc": "魔塔的终极存在，掌控虚空之力"}
+  ],
+  "new_items": [
+    {"id": "void_crystal_small", "name": "小虚空水晶", "effect": "抵御虚空侵蚀，恢复 50HP"},
+    {"id": "void_crystal_medium", "name": "中虚空水晶", "effect": "抵御虚空侵蚀，恢复 150HP"},
+    {"id": "void_crystal_large", "name": "大虚空水晶", "effect": "抵御虚空侵蚀，恢复 300HP"},
+    {"id": "void_crystal_huge", "name": "超大虚空水晶", "effect": "抵御虚空侵蚀，恢复 500HP"},
+    {"id": "armor_void", "name": "虚空护甲", "effect": "防御 +50，虚空抗 +20%"},
+    {"id": "armor_darkness", "name": "黑暗护甲", "effect": "防御 +65，虚空抗 +30%"},
+    {"id": "armor_dragon_void", "name": "虚空龙甲", "effect": "防御 +80，虚空抗 +40%"},
+    {"id": "sword_void", "name": "虚空之剑", "effect": "攻击 +55"},
+    {"id": "sword_darkness", "name": "黑暗之剑", "effect": "攻击 +70"},
+    {"id": "sword_chaos", "name": "混沌之剑", "effect": "攻击 +95"},
+    {"id": "shield_void", "name": "虚空盾", "effect": "防御 +55"},
+    {"id": "shield_chaos", "name": "混沌盾", "effect": "防御 +80"},
+    {"id": "staff_void", "name": "虚空法杖", "effect": "攻击 +80"},
+    {"id": "weapon_chaos", "name": "混沌武器", "effect": "攻击 +100"},
+    {"id": "crown_of_king", "name": "神王之冠", "effect": "全属性 +50"},
+    {"id": "heart_of_void", "name": "虚空之心", "effect": "关键道具，免疫虚空侵蚀"},
+    {"id": "potion_infinity", "name": "无限药水", "effect": "恢复 5000HP"},
+    {"id": "potion_transcendent", "name": "超越药水", "effect": "恢复 8000HP"},
+    {"id": "potion_godlike", "name": "神之药水", "effect": "恢复 10000HP，全属性临时 +50"},
+    {"id": "gem_void_small", "name": "小虚空宝石", "value": "10000 金币"},
+    {"id": "gem_void_medium", "name": "中虚空宝石", "value": "20000 金币"},
+    {"id": "gem_void_large", "name": "大虚空宝石", "value": "30000 金币"},
+    {"id": "gem_chaos", "name": "混沌宝石", "value": "50000 金币"},
+    {"id": "gem_godlike", "name": "神之宝石", "value": "100000 金币"},
+    {"id": "key_divine", "name": "神圣钥匙", "effect": "开启最终之门"}
+  ],
+  "endings": {
+    "normal_ending": "击败虚空之主，逃离魔塔",
+    "true_ending": "收集四颗元素之心，击败虚空之主真身，成为新的塔主",
+    "requirements": {
+      "normal": "到达 50 层并击败 Boss",
+      "true": "拥有寒冰之心、火焰之心、迷雾之心 (隐形)、试炼之心 (隐形)，并在最终战使用"
+    }
+  },
+  "progression": "50 层通关，解锁 New Game+ 模式"
+}

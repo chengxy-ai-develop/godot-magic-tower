@@ -1,0 +1,334 @@
+{
+  "version": "1.0",
+  "created": "2026-03-14",
+  "region": "火焰之塔 (31-40 层)",
+  "description": "进入火焰之塔，炽热环境会持续造成伤害。需要寻找清凉之源或快速通过。敌人多为火属性生物，攻击强大。",
+  "new_mechanics": [
+    "炽热环境：每步损失 3%HP，某些区域损失更多",
+    "清凉之源：某些房间有泉水，可以恢复体温和 HP",
+    "熔岩河流：接触会遭受大量伤害",
+    "火焰陷阱：踩中后遭受范围火焰伤害",
+    "燃烧状态：某些攻击会让玩家燃烧数回合",
+    "火焰护盾：某些敌人有火焰护盾，近战攻击会反伤"
+  ],
+  "floors": [
+    {
+      "floor_id": 31,
+      "name": "火焰之塔 - 第 31 层",
+      "difficulty": "困难",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "fire_golem", "x": 4, "y": 4},
+        {"id": "fire_golem", "x": 12, "y": 4},
+        {"id": "dark_knight", "x": 8, "y": 8},
+        {"id": "wolf", "x": 4, "y": 12},
+        {"id": "wolf", "x": 12, "y": 12},
+        {"id": "orc", "x": 8, "y": 5}
+      ],
+      "items": [
+        {"id": "potion_mythical", "x": 1, "y": 8},
+        {"id": "armor_fire", "x": 15, "y": 8},
+        {"id": "key_blue", "x": 8, "y": 14},
+        {"id": "water_crystal_small", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "blue", "x": 8, "y": 1, "locked": true},
+        {"type": "red", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["炽热环境：每步损失 3%HP", "清凉之源：(8,8) 处有泉水"]
+    },
+    {
+      "floor_id": 32,
+      "name": "火焰之塔 - 第 32 层",
+      "difficulty": "困难",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "fire_golem", "x": 3, "y": 3},
+        {"id": "fire_golem", "x": 13, "y": 3},
+        {"id": "fire_elemental", "x": 8, "y": 8},
+        {"id": "dark_knight", "x": 5, "y": 12},
+        {"id": "dark_knight", "x": 11, "y": 12}
+      ],
+      "items": [
+        {"id": "potion_mythical", "x": 1, "y": 8},
+        {"id": "sword_flame", "x": 15, "y": 8},
+        {"id": "key_yellow", "x": 8, "y": 14},
+        {"id": "gem_red_large", "x": 1, "y": 15}
+      ],
+      "doors": [
+        {"type": "yellow", "x": 8, "y": 1, "locked": true},
+        {"type": "blue", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["熔岩河流：南北两侧有熔岩"]
+    },
+    {
+      "floor_id": 33,
+      "name": "火焰之塔 - 第 33 层",
+      "difficulty": "专家",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "fire_golem", "x": 4, "y": 4},
+        {"id": "fire_golem", "x": 12, "y": 4},
+        {"id": "fire_elemental", "x": 8, "y": 8},
+        {"id": "fire_elemental", "x": 4, "y": 12},
+        {"id": "fire_elemental", "x": 12, "y": 12},
+        {"id": "frost_mage", "x": 8, "y": 5}
+      ],
+      "items": [
+        {"id": "potion_divine", "x": 1, "y": 8},
+        {"id": "shield_flame", "x": 15, "y": 8},
+        {"id": "key_red", "x": 8, "y": 14},
+        {"id": "water_crystal_medium", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "red", "x": 8, "y": 1, "locked": true},
+        {"type": "yellow", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["火焰陷阱：随机位置有火焰喷射", "隐藏房间：(1,8) 处有秘密通道"]
+    },
+    {
+      "floor_id": 34,
+      "name": "火焰之塔 - 第 34 层",
+      "difficulty": "专家",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "flame_mage", "x": 5, "y": 5},
+        {"id": "flame_mage", "x": 11, "y": 5},
+        {"id": "fire_golem", "x": 8, "y": 8},
+        {"id": "fire_elemental", "x": 5, "y": 11},
+        {"id": "fire_elemental", "x": 11, "y": 11},
+        {"id": "lich", "x": 8, "y": 4}
+      ],
+      "items": [
+        {"id": "potion_divine", "x": 1, "y": 8},
+        {"id": "armor_inferno", "x": 15, "y": 8},
+        {"id": "key_blue", "x": 8, "y": 14, "count": 2},
+        {"id": "gem_purple_large", "x": 1, "y": 15}
+      ],
+      "doors": [
+        {"type": "blue", "x": 8, "y": 1, "locked": true},
+        {"type": "red", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "npcs": [
+        {"id": "burned_adventurer", "x": 15, "y": 15, "dialog": "我...被火焰烧伤了...小心火焰领主，他的力量来自火焰之心..."}
+      ],
+      "special_features": ["燃烧陷阱：某些区域会让玩家燃烧"]
+    },
+    {
+      "floor_id": 35,
+      "name": "火焰之塔 - 第 35 层",
+      "difficulty": "专家",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "flame_mage", "x": 4, "y": 4},
+        {"id": "flame_mage", "x": 12, "y": 4},
+        {"id": "flame_mage", "x": 4, "y": 12},
+        {"id": "flame_mage", "x": 12, "y": 12},
+        {"id": "fire_golem", "x": 8, "y": 8},
+        {"id": "fire_elemental", "x": 8, "y": 4},
+        {"id": "fire_elemental", "x": 8, "y": 12}
+      ],
+      "items": [
+        {"id": "potion_divine", "x": 1, "y": 8},
+        {"id": "sword_inferno", "x": 15, "y": 8},
+        {"id": "key_yellow", "x": 8, "y": 14, "count": 2},
+        {"id": "water_crystal_large", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "yellow", "x": 8, "y": 1, "locked": true},
+        {"type": "blue", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["熔岩迷宫：需要绕行通过", "清凉之源：四个角落有泉水"]
+    },
+    {
+      "floor_id": 36,
+      "name": "火焰之塔 - 第 36 层",
+      "difficulty": "大师",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "fire_dragon_whelp", "x": 5, "y": 5},
+        {"id": "fire_dragon_whelp", "x": 11, "y": 5},
+        {"id": "flame_mage", "x": 8, "y": 8},
+        {"id": "fire_golem", "x": 5, "y": 11},
+        {"id": "fire_golem", "x": 11, "y": 11},
+        {"id": "frost_lord", "x": 8, "y": 4}
+      ],
+      "items": [
+        {"id": "potion_divine", "x": 1, "y": 8},
+        {"id": "staff_flame", "x": 15, "y": 8},
+        {"id": "key_red", "x": 8, "y": 14},
+        {"id": "gem_diamond_medium", "x": 1, "y": 15}
+      ],
+      "doors": [
+        {"type": "red", "x": 8, "y": 1, "locked": true},
+        {"type": "yellow", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["炽热环境：每步损失 4%HP"]
+    },
+    {
+      "floor_id": 37,
+      "name": "火焰之塔 - 第 37 层",
+      "difficulty": "大师",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "fire_dragon_whelp", "x": 4, "y": 4},
+        {"id": "fire_dragon_whelp", "x": 12, "y": 4},
+        {"id": "fire_dragon_whelp", "x": 4, "y": 12},
+        {"id": "fire_dragon_whelp", "x": 12, "y": 12},
+        {"id": "flame_mage", "x": 8, "y": 8},
+        {"id": "fire_golem", "x": 8, "y": 5},
+        {"id": "fire_golem", "x": 8, "y": 11}
+      ],
+      "items": [
+        {"id": "potion_eternal", "x": 1, "y": 8},
+        {"id": "armor_dragon_fire", "x": 15, "y": 8},
+        {"id": "key_blue", "x": 8, "y": 14, "count": 3},
+        {"id": "gem_star_medium", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "blue", "x": 8, "y": 1, "locked": true},
+        {"type": "red", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["火焰护盾：某些敌人有反伤护盾"]
+    },
+    {
+      "floor_id": 38,
+      "name": "火焰之塔 - 第 38 层",
+      "difficulty": "大师",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "fire_lord", "x": 5, "y": 5},
+        {"id": "fire_lord", "x": 11, "y": 5},
+        {"id": "fire_dragon_whelp", "x": 8, "y": 8},
+        {"id": "flame_mage", "x": 5, "y": 11},
+        {"id": "flame_mage", "x": 11, "y": 11},
+        {"id": "lich", "x": 8, "y": 4}
+      ],
+      "items": [
+        {"id": "potion_eternal", "x": 1, "y": 8},
+        {"id": "sword_pyroclasm", "x": 15, "y": 8},
+        {"id": "key_yellow", "x": 8, "y": 14, "count": 3},
+        {"id": "water_crystal_huge", "x": 1, "y": 15}
+      ],
+      "doors": [
+        {"type": "yellow", "x": 8, "y": 1, "locked": true},
+        {"type": "blue", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "npcs": [
+        {"id": "fire_spirit", "x": 15, "y": 15, "dialog": "火焰领主的力量来自熔岩核心...找到它，你就能战胜他。"}
+      ],
+      "special_features": ["神秘火灵：提供重要提示"]
+    },
+    {
+      "floor_id": 39,
+      "name": "火焰之塔 - 第 39 层",
+      "difficulty": "传奇",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "fire_lord", "x": 4, "y": 4},
+        {"id": "fire_lord", "x": 12, "y": 4},
+        {"id": "fire_lord", "x": 4, "y": 12},
+        {"id": "fire_lord", "x": 12, "y": 12},
+        {"id": "fire_dragon_whelp", "x": 8, "y": 8},
+        {"id": "flame_mage", "x": 8, "y": 4},
+        {"id": "flame_mage", "x": 8, "y": 12}
+      ],
+      "items": [
+        {"id": "potion_eternal", "x": 1, "y": 8},
+        {"id": "shield_pyroclasm", "x": 15, "y": 8},
+        {"id": "key_red", "x": 8, "y": 14, "count": 3},
+        {"id": "gem_diamond_large", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "red", "x": 8, "y": 1, "locked": true},
+        {"type": "yellow", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["传送阵迷宫 + 熔岩河流"]
+    },
+    {
+      "floor_id": 40,
+      "name": "火焰之塔 - 第 40 层",
+      "difficulty": "Boss 层",
+      "size": {"width": 21, "height": 21},
+      "enemies": [
+        {"id": "boss_fire_lord", "x": 10, "y": 10, "is_boss": true},
+        {"id": "fire_lord", "x": 5, "y": 5},
+        {"id": "fire_lord", "x": 15, "y": 5},
+        {"id": "fire_lord", "x": 5, "y": 15},
+        {"id": "fire_lord", "x": 15, "y": 15},
+        {"id": "fire_dragon_whelp", "x": 10, "y": 5},
+        {"id": "fire_dragon_whelp", "x": 10, "y": 15},
+        {"id": "fire_dragon_whelp", "x": 5, "y": 10},
+        {"id": "fire_dragon_whelp", "x": 15, "y": 10}
+      ],
+      "items": [
+        {"id": "potion_eternal", "x": 1, "y": 10},
+        {"id": "crown_flame", "x": 19, "y": 10},
+        {"id": "key_magic", "x": 10, "y": 2},
+        {"id": "gem_star_large", "x": 1, "y": 1},
+        {"id": "heart_of_flame", "x": 19, "y": 19}
+      ],
+      "doors": [
+        {"type": "magic", "x": 10, "y": 1, "locked": true},
+        {"type": "red", "x": 10, "y": 19, "locked": false}
+      ],
+      "stairs": {"up": {"x": 10, "y": 1}, "down": {"x": 10, "y": 19}},
+      "npcs": [
+        {"id": "captive_princess", "x": 1, "y": 1, "dialog": "我被困在这里...火焰领主的力量来自熔岩核心，摧毁它才能打败他。"}
+      ],
+      "special_features": [
+        "Boss 战：火焰领主 (火属性攻击，召唤火元素)",
+        "先清理 4 个火焰领主和 4 个火龙幼崽",
+        "Boss 会让玩家燃烧数回合",
+        "击败 Boss 后解救公主，获得魔法钥匙和火焰之心"
+      ],
+      "boss_info": {
+        "id": "boss_fire_lord",
+        "name": "火焰领主",
+        "hp": 1500,
+        "attack": 140,
+        "defense": 70,
+        "special": ["燃烧攻击", "召唤火元素", "烈焰风暴范围攻击", "火焰护盾反伤"],
+        "reward": ["魔法钥匙", "火焰王冠", "火焰之心", "大量金币"]
+      }
+    }
+  ],
+  "new_enemies": [
+    {"id": "fire_golem", "name": "火焰魔像", "difficulty": "困难", "desc": "由熔岩构成的巨人，高防御高攻击"},
+    {"id": "fire_elemental", "name": "火元素", "difficulty": "专家", "desc": "纯火焰构成的元素生物，免疫火属性攻击"},
+    {"id": "flame_mage", "name": "烈焰法师", "difficulty": "专家", "desc": "精通火焰魔法的法师，范围攻击强"},
+    {"id": "fire_dragon_whelp", "name": "火龙幼崽", "difficulty": "大师", "desc": "幼年火龙，会喷吐火焰"},
+    {"id": "fire_lord", "name": "火焰领主", "difficulty": "大师", "desc": "火焰领域的统治者，强大无比"},
+    {"id": "boss_fire_lord", "name": "火焰领主王", "difficulty": "Boss", "desc": "火焰之塔的统治者，掌控灭世之火"}
+  ],
+  "new_items": [
+    {"id": "water_crystal_small", "name": "小水晶", "effect": "抵御炎热，恢复 50HP"},
+    {"id": "water_crystal_medium", "name": "中水晶", "effect": "抵御炎热，恢复 150HP"},
+    {"id": "water_crystal_large", "name": "大水晶", "effect": "抵御炎热，恢复 300HP"},
+    {"id": "water_crystal_huge", "name": "超大水晶", "effect": "抵御炎热，恢复 500HP"},
+    {"id": "armor_fire", "name": "火焰护甲", "effect": "防御 +40，火抗 +20%"},
+    {"id": "armor_inferno", "name": "地狱火甲", "effect": "防御 +55，火抗 +30%"},
+    {"id": "armor_dragon_fire", "name": "火龙甲", "effect": "防御 +70，火抗 +40%"},
+    {"id": "sword_flame", "name": "火焰之剑", "effect": "攻击 +45"},
+    {"id": "sword_inferno", "name": "地狱火剑", "effect": "攻击 +60"},
+    {"id": "sword_pyroclasm", "name": "火山爆发剑", "effect": "攻击 +85"},
+    {"id": "shield_flame", "name": "火焰盾", "effect": "防御 +45"},
+    {"id": "shield_pyroclasm", "name": "火山盾", "effect": "防御 +70"},
+    {"id": "staff_flame", "name": "烈焰法杖", "effect": "攻击 +70"},
+    {"id": "crown_flame", "name": "火焰王冠", "effect": "全属性 +35"},
+    {"id": "heart_of_flame", "name": "火焰之心", "effect": "关键道具，免疫炎热"},
+    {"id": "potion_divine", "name": "神圣药水", "effect": "恢复 2000HP"},
+    {"id": "potion_eternal", "name": "永恒药水", "effect": "恢复 3000HP"},
+    {"id": "gem_star_large", "name": "大星星宝石", "value": "8000 金币"}
+  ],
+  "progression": "40 层后进入虚空之塔区域 (41-50 层)"
+}
