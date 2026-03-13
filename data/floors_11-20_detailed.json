@@ -1,0 +1,325 @@
+{
+  "version": "1.0",
+  "created": "2026-03-14",
+  "region": "迷雾之塔 (11-20 层)",
+  "description": "进入迷雾之塔，视野受限，环境复杂。需要谨慎探索，注意隐藏的危险。",
+  "new_mechanics": [
+    "迷雾效果：视野范围缩小，需要靠近才能发现敌人和道具",
+    "传送阵：某些楼层有传送阵，可以快速移动",
+    "毒雾区域：某些区域会持续造成伤害",
+    "隐藏通道：需要特定条件才能开启的隐藏路径"
+  ],
+  "floors": [
+    {
+      "floor_id": 11,
+      "name": "迷雾之塔 - 第 11 层",
+      "difficulty": "中等",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "skeleton", "x": 4, "y": 4},
+        {"id": "skeleton", "x": 12, "y": 4},
+        {"id": "zombie", "x": 8, "y": 8},
+        {"id": "wolf", "x": 4, "y": 12},
+        {"id": "wolf", "x": 12, "y": 12},
+        {"id": "orc", "x": 8, "y": 5}
+      ],
+      "items": [
+        {"id": "potion_large", "x": 1, "y": 8},
+        {"id": "shield_iron", "x": 15, "y": 8},
+        {"id": "key_blue", "x": 8, "y": 14},
+        {"id": "gem_green_medium", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "blue", "x": 8, "y": 1, "locked": true},
+        {"type": "yellow", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["迷雾效果：视野范围缩小至 3 格"]
+    },
+    {
+      "floor_id": 12,
+      "name": "迷雾之塔 - 第 12 层",
+      "difficulty": "中等",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "goblin_archer", "x": 3, "y": 3},
+        {"id": "goblin_archer", "x": 13, "y": 3},
+        {"id": "skeleton", "x": 8, "y": 8},
+        {"id": "knight", "x": 5, "y": 12},
+        {"id": "knight", "x": 11, "y": 12}
+      ],
+      "items": [
+        {"id": "potion_huge", "x": 1, "y": 8},
+        {"id": "sword_steel", "x": 15, "y": 8},
+        {"id": "key_yellow", "x": 8, "y": 14},
+        {"id": "gem_red_medium", "x": 1, "y": 15}
+      ],
+      "doors": [
+        {"type": "yellow", "x": 8, "y": 1, "locked": true},
+        {"type": "red", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["毒雾区域：中心区域每步损失 5%HP"]
+    },
+    {
+      "floor_id": 13,
+      "name": "迷雾之塔 - 第 13 层",
+      "difficulty": "困难",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "knight", "x": 4, "y": 4},
+        {"id": "knight", "x": 12, "y": 4},
+        {"id": "orc", "x": 8, "y": 8},
+        {"id": "goblin_archer", "x": 4, "y": 12},
+        {"id": "goblin_archer", "x": 12, "y": 12},
+        {"id": "wolf", "x": 8, "y": 5},
+        {"id": "wolf", "x": 8, "y": 11}
+      ],
+      "items": [
+        {"id": "potion_huge", "x": 1, "y": 8},
+        {"id": "shield_steel", "x": 15, "y": 8},
+        {"id": "key_red", "x": 8, "y": 14},
+        {"id": "gem_blue_large", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "red", "x": 8, "y": 1, "locked": true},
+        {"type": "blue", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["隐藏通道：击败所有敌人后开启通往宝藏室的通道"]
+    },
+    {
+      "floor_id": 14,
+      "name": "迷雾之塔 - 第 14 层",
+      "difficulty": "困难",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "dark_knight", "x": 5, "y": 5},
+        {"id": "dark_knight", "x": 11, "y": 5},
+        {"id": "skeleton_mage", "x": 8, "y": 8},
+        {"id": "knight", "x": 5, "y": 11},
+        {"id": "knight", "x": 11, "y": 11},
+        {"id": "goblin_archer", "x": 8, "y": 4}
+      ],
+      "items": [
+        {"id": "potion_super", "x": 1, "y": 8},
+        {"id": "sword_magic", "x": 15, "y": 8},
+        {"id": "key_blue", "x": 8, "y": 14, "count": 2},
+        {"id": "gem_purple_medium", "x": 1, "y": 15}
+      ],
+      "doors": [
+        {"type": "blue", "x": 8, "y": 1, "locked": true},
+        {"type": "red", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "npcs": [
+        {"id": "merchant", "x": 15, "y": 15, "dialog": "欢迎来到迷雾深处，我这里有些好东西..."}
+      ],
+      "special_features": ["神秘商人：出售高级道具"]
+    },
+    {
+      "floor_id": 15,
+      "name": "迷雾之塔 - 第 15 层",
+      "difficulty": "困难",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "dark_knight", "x": 4, "y": 4},
+        {"id": "dark_knight", "x": 12, "y": 4},
+        {"id": "dark_knight", "x": 4, "y": 12},
+        {"id": "dark_knight", "x": 12, "y": 12},
+        {"id": "skeleton_mage", "x": 8, "y": 8},
+        {"id": "goblin_archer", "x": 8, "y": 4},
+        {"id": "goblin_archer", "x": 8, "y": 12}
+      ],
+      "items": [
+        {"id": "potion_super", "x": 1, "y": 8},
+        {"id": "armor_steel", "x": 15, "y": 8},
+        {"id": "key_yellow", "x": 8, "y": 14, "count": 2},
+        {"id": "gem_green_large", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "yellow", "x": 8, "y": 1, "locked": true},
+        {"type": "blue", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["传送阵：四个角落有传送阵，可以快速移动"]
+    },
+    {
+      "floor_id": 16,
+      "name": "迷雾之塔 - 第 16 层",
+      "difficulty": "困难",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "orc_chief", "x": 5, "y": 5},
+        {"id": "orc_chief", "x": 11, "y": 5},
+        {"id": "dark_knight", "x": 8, "y": 8},
+        {"id": "knight", "x": 5, "y": 11},
+        {"id": "knight", "x": 11, "y": 11},
+        {"id": "skeleton_mage", "x": 8, "y": 4}
+      ],
+      "items": [
+        {"id": "potion_super", "x": 1, "y": 8},
+        {"id": "sword_dark", "x": 15, "y": 8},
+        {"id": "key_red", "x": 8, "y": 14},
+        {"id": "gem_red_large", "x": 1, "y": 15}
+      ],
+      "doors": [
+        {"type": "red", "x": 8, "y": 1, "locked": true},
+        {"type": "yellow", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["毒雾区域：大部分区域有毒雾，需要快速通过"]
+    },
+    {
+      "floor_id": 17,
+      "name": "迷雾之塔 - 第 17 层",
+      "difficulty": "困难",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "skeleton_mage", "x": 4, "y": 4},
+        {"id": "skeleton_mage", "x": 12, "y": 4},
+        {"id": "dark_knight", "x": 8, "y": 8},
+        {"id": "orc_chief", "x": 4, "y": 12},
+        {"id": "orc_chief", "x": 12, "y": 12},
+        {"id": "goblin_archer", "x": 8, "y": 5},
+        {"id": "goblin_archer", "x": 8, "y": 11}
+      ],
+      "items": [
+        {"id": "potion_super", "x": 1, "y": 8},
+        {"id": "shield_magic", "x": 15, "y": 8},
+        {"id": "key_blue", "x": 8, "y": 14, "count": 3},
+        {"id": "gem_purple_large", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "blue", "x": 8, "y": 1, "locked": true},
+        {"type": "red", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["隐藏房间：需要红色钥匙开启"]
+    },
+    {
+      "floor_id": 18,
+      "name": "迷雾之塔 - 第 18 层",
+      "difficulty": "专家",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "lich", "x": 5, "y": 5},
+        {"id": "lich", "x": 11, "y": 5},
+        {"id": "dark_knight", "x": 8, "y": 8},
+        {"id": "skeleton_mage", "x": 5, "y": 11},
+        {"id": "skeleton_mage", "x": 11, "y": 11},
+        {"id": "orc_chief", "x": 8, "y": 4}
+      ],
+      "items": [
+        {"id": "potion_legendary", "x": 1, "y": 8},
+        {"id": "armor_magic", "x": 15, "y": 8},
+        {"id": "key_yellow", "x": 8, "y": 14, "count": 3},
+        {"id": "gem_diamond_small", "x": 1, "y": 15}
+      ],
+      "doors": [
+        {"type": "yellow", "x": 8, "y": 1, "locked": true},
+        {"type": "blue", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "npcs": [
+        {"id": "mysterious_sage", "x": 15, "y": 15, "dialog": "年轻人，你已走到这里...前方是更深的黑暗。"}
+      ],
+      "special_features": ["神秘智者：提供重要提示"]
+    },
+    {
+      "floor_id": 19,
+      "name": "迷雾之塔 - 第 19 层",
+      "difficulty": "专家",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "lich", "x": 4, "y": 4},
+        {"id": "lich", "x": 12, "y": 4},
+        {"id": "lich", "x": 4, "y": 12},
+        {"id": "lich", "x": 12, "y": 12},
+        {"id": "dark_knight", "x": 8, "y": 8},
+        {"id": "skeleton_mage", "x": 8, "y": 4},
+        {"id": "skeleton_mage", "x": 8, "y": 12}
+      ],
+      "items": [
+        {"id": "potion_legendary", "x": 1, "y": 8},
+        {"id": "sword_legendary", "x": 15, "y": 8},
+        {"id": "key_red", "x": 8, "y": 14, "count": 3},
+        {"id": "gem_diamond_medium", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "red", "x": 8, "y": 1, "locked": true},
+        {"type": "yellow", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["传送阵迷宫：需要使用传送阵才能到达楼梯"]
+    },
+    {
+      "floor_id": 20,
+      "name": "迷雾之塔 - 第 20 层",
+      "difficulty": "Boss 层",
+      "size": {"width": 21, "height": 21},
+      "enemies": [
+        {"id": "boss_mage_king", "x": 10, "y": 10, "is_boss": true},
+        {"id": "lich", "x": 5, "y": 5},
+        {"id": "lich", "x": 15, "y": 5},
+        {"id": "lich", "x": 5, "y": 15},
+        {"id": "lich", "x": 15, "y": 15},
+        {"id": "dark_knight", "x": 10, "y": 5},
+        {"id": "dark_knight", "x": 10, "y": 15},
+        {"id": "dark_knight", "x": 5, "y": 10},
+        {"id": "dark_knight", "x": 15, "y": 10}
+      ],
+      "items": [
+        {"id": "potion_legendary", "x": 1, "y": 10},
+        {"id": "staff_arcane", "x": 19, "y": 10},
+        {"id": "key_magic", "x": 10, "y": 2},
+        {"id": "gem_diamond_large", "x": 1, "y": 1},
+        {"id": "gem_star_small", "x": 19, "y": 19}
+      ],
+      "doors": [
+        {"type": "magic", "x": 10, "y": 1, "locked": true},
+        {"type": "red", "x": 10, "y": 19, "locked": false}
+      ],
+      "stairs": {"up": {"x": 10, "y": 1}, "down": {"x": 10, "y": 19}},
+      "npcs": [
+        {"id": "captive_mage", "x": 1, "y": 1, "dialog": "感谢你的解救...法师王的力量来自他的法杖，先击败护卫，再集中攻击他。"}
+      ],
+      "special_features": [
+        "Boss 战：法师王（魔法攻击，召唤骷髅）",
+        "先清理 4 个巫妖和 4 个黑暗骑士",
+        "Boss 会召唤骷髅助战",
+        "击败 Boss 后解救被俘法师，获得魔法钥匙"
+      ],
+      "boss_info": {
+        "id": "boss_mage_king",
+        "name": "法师王",
+        "hp": 800,
+        "attack": 100,
+        "defense": 40,
+        "special": ["召唤骷髅", "魔法护盾", "范围魔法攻击"],
+        "reward": ["魔法钥匙", "传说法杖", "大量金币"]
+      }
+    }
+  ],
+  "new_enemies": [
+    {"id": "dark_knight", "name": "黑暗骑士", "difficulty": "困难", "desc": "被黑暗力量腐蚀的骑士，攻防兼备"},
+    {"id": "skeleton_mage", "name": "骷髅法师", "difficulty": "困难", "desc": "会魔法攻击的骷髅，远程威胁"},
+    {"id": "orc_chief", "name": "兽人酋长", "difficulty": "困难", "desc": "兽人首领，高血量高攻击"},
+    {"id": "lich", "name": "巫妖", "difficulty": "专家", "desc": "不死的魔法生物，会使用黑暗魔法"},
+    {"id": "boss_mage_king", "name": "法师王", "difficulty": "Boss", "desc": "迷雾之塔的统治者，强大的魔法师"}
+  ],
+  "new_items": [
+    {"id": "potion_super", "name": "超级药水", "effect": "恢复 500HP"},
+    {"id": "potion_legendary", "name": "传说药水", "effect": "恢复 1000HP"},
+    {"id": "sword_dark", "name": "黑暗之剑", "effect": "攻击 +50"},
+    {"id": "sword_legendary", "name": "传说之剑", "effect": "攻击 +80"},
+    {"id": "armor_magic", "name": "魔法护甲", "effect": "防御 +60"},
+    {"id": "shield_magic", "name": "魔法盾牌", "effect": "防御 +50"},
+    {"id": "staff_arcane", "name": "奥术法杖", "effect": "攻击 +70"},
+    {"id": "gem_diamond_small", "name": "小钻石", "value": "500 金币"},
+    {"id": "gem_diamond_medium", "name": "中钻石", "value": "1000 金币"},
+    {"id": "gem_diamond_large", "name": "大钻石", "value": "2000 金币"},
+    {"id": "gem_star_small", "name": "小星星宝石", "value": "3000 金币"}
+  ],
+  "progression": "20 层后进入寒冰之塔区域 (21-30 层)"
+}
