@@ -1,0 +1,37 @@
+# Godot 4+ specific ignores
+.godot/
+*.godot.remap
+*.import
+*.tmp
+
+# Godot 4+ specific directories
+.vscode/
+.idea/
+
+# Compiled assets
+export.cfg
+export_presets.cfg
+
+# Mono-specific ignores (if using C#)
+.mono/
+*.csproj
+*.sln
+*.userprefs
+obj/
+bin/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*~
+*.swp
+*.bak
+
+# Logs
+*.log
+
+# Build outputs
+builds/
+exports/

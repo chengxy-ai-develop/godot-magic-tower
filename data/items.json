@@ -1,0 +1,103 @@
+{
+  "items": [
+    {
+      "id": "potion_small",
+      "name": "小血瓶",
+      "description": "恢复少量生命值",
+      "type": "consumable",
+      "effect": {"hp": 200},
+      "sprite": "res://assets/items/potion_small.png",
+      "rarity": "common"
+    },
+    {
+      "id": "potion_large",
+      "name": "大血瓶",
+      "description": "恢复大量生命值",
+      "type": "consumable",
+      "effect": {"hp": 500},
+      "sprite": "res://assets/items/potion_large.png",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "gem_red",
+      "name": "红宝石",
+      "description": "增加攻击力",
+      "type": "permanent",
+      "effect": {"attack": 3},
+      "sprite": "res://assets/items/gem_red.png",
+      "rarity": "common"
+    },
+    {
+      "id": "gem_blue",
+      "name": "蓝宝石",
+      "description": "增加防御力",
+      "type": "permanent",
+      "effect": {"defense": 3},
+      "sprite": "res://assets/items/gem_blue.png",
+      "rarity": "common"
+    },
+    {
+      "id": "key_yellow",
+      "name": "黄钥匙",
+      "description": "打开黄色门",
+      "type": "key",
+      "effect": {},
+      "sprite": "res://assets/items/key_yellow.png",
+      "rarity": "common"
+    },
+    {
+      "id": "key_blue",
+      "name": "蓝钥匙",
+      "description": "打开蓝色门",
+      "type": "key",
+      "effect": {},
+      "sprite": "res://assets/items/key_blue.png",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "key_red",
+      "name": "红钥匙",
+      "description": "打开红色门",
+      "type": "key",
+      "effect": {},
+      "sprite": "res://assets/items/key_red.png",
+      "rarity": "rare"
+    },
+    {
+      "id": "sword_iron",
+      "name": "铁剑",
+      "description": "普通的铁剑",
+      "type": "equipment",
+      "effect": {"attack": 10},
+      "sprite": "res://assets/items/sword_iron.png",
+      "rarity": "common"
+    },
+    {
+      "id": "sword_steel",
+      "name": "钢剑",
+      "description": "锋利的钢剑",
+      "type": "equipment",
+      "effect": {"attack": 20},
+      "sprite": "res://assets/items/sword_steel.png",
+      "rarity": "uncommon"
+    },
+    {
+      "id": "shield_iron",
+      "name": "铁盾",
+      "description": "普通的铁盾",
+      "type": "equipment",
+      "effect": {"defense": 10},
+      "sprite": "res://assets/items/shield_iron.png",
+      "rarity": "common"
+    },
+    {
+      "id": "shield_steel",
+      "name": "钢盾",
+      "description": "坚固的钢盾",
+      "type": "equipment",
+      "effect": {"defense": 20},
+      "sprite": "res://assets/items/shield_steel.png",
+      "rarity": "uncommon"
+    }
+  ]
+}
