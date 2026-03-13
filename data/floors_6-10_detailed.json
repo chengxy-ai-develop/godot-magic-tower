@@ -1,0 +1,193 @@
+{
+  "version": "1.0",
+  "created": "2026-03-14",
+  "region": "试炼之塔 (6-10 层)",
+  "floors": [
+    {
+      "floor_id": 6,
+      "name": "试炼之塔 - 第 6 层",
+      "difficulty": "中等",
+      "size": {"width": 15, "height": 15},
+      "layout": [
+        [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+        [1,2,2,2,2,2,2,0,2,2,2,2,2,2,1],
+        [1,2,0,0,0,0,2,0,2,0,0,0,0,0,1],
+        [1,2,0,0,0,0,2,0,2,0,0,0,0,0,1],
+        [1,2,0,0,0,0,2,0,2,0,0,0,0,0,1],
+        [1,2,2,2,2,0,2,0,2,0,0,0,0,0,1],
+        [1,0,0,0,0,0,2,0,2,0,0,0,0,0,1],
+        [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+        [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+        [1,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+        [1,2,0,0,0,0,2,0,2,0,0,0,0,0,1],
+        [1,2,0,0,0,0,2,0,2,0,0,0,0,0,1],
+        [1,2,2,2,2,2,2,0,2,2,2,2,2,2,1],
+        [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+        [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+      ],
+      "tiles": {"0": "空地", "1": "墙壁", "2": "地板"},
+      "enemies": [
+        {"id": "zombie", "x": 3, "y": 3},
+        {"id": "zombie", "x": 11, "y": 3},
+        {"id": "orc", "x": 7, "y": 7},
+        {"id": "goblin", "x": 3, "y": 10},
+        {"id": "goblin", "x": 11, "y": 10}
+      ],
+      "items": [
+        {"id": "potion_medium", "x": 1, "y": 5},
+        {"id": "shield_steel", "x": 13, "y": 5},
+        {"id": "key_blue", "x": 7, "y": 10}
+      ],
+      "doors": [
+        {"type": "blue", "x": 7, "y": 1, "locked": true},
+        {"type": "yellow", "x": 7, "y": 13, "locked": false}
+      ],
+      "stairs": {"up": {"x": 7, "y": 1}, "down": {"x": 7, "y": 13}},
+      "special_features": ["陷阱区域：中心区域有地刺陷阱"]
+    },
+    {
+      "floor_id": 7,
+      "name": "试炼之塔 - 第 7 层",
+      "difficulty": "中等",
+      "size": {"width": 15, "height": 15},
+      "enemies": [
+        {"id": "wolf", "x": 2, "y": 2},
+        {"id": "wolf", "x": 12, "y": 2},
+        {"id": "zombie", "x": 7, "y": 5},
+        {"id": "skeleton", "x": 5, "y": 10},
+        {"id": "skeleton", "x": 9, "y": 10}
+      ],
+      "items": [
+        {"id": "potion_large", "x": 1, "y": 5},
+        {"id": "gem_red_medium", "x": 13, "y": 5},
+        {"id": "key_yellow", "x": 7, "y": 10},
+        {"id": "potion_medium", "x": 3, "y": 12}
+      ],
+      "doors": [
+        {"type": "yellow", "x": 7, "y": 1, "locked": true}
+      ],
+      "stairs": {"up": {"x": 7, "y": 1}, "down": {"x": 7, "y": 13}},
+      "special_features": ["隐藏房间：打破 (7,7) 处墙壁可进入"]
+    },
+    {
+      "floor_id": 8,
+      "name": "试炼之塔 - 第 8 层",
+      "difficulty": "中等",
+      "size": {"width": 15, "height": 15},
+      "enemies": [
+        {"id": "wolf", "x": 3, "y": 3},
+        {"id": "wolf", "x": 11, "y": 3},
+        {"id": "orc", "x": 7, "y": 7},
+        {"id": "zombie", "x": 3, "y": 11},
+        {"id": "zombie", "x": 11, "y": 11},
+        {"id": "goblin_archer", "x": 7, "y": 4}
+      ],
+      "items": [
+        {"id": "potion_large", "x": 1, "y": 7},
+        {"id": "sword_steel", "x": 13, "y": 7},
+        {"id": "key_red", "x": 7, "y": 12},
+        {"id": "gem_blue_medium", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "red", "x": 7, "y": 1, "locked": true},
+        {"type": "blue", "x": 7, "y": 13, "locked": false}
+      ],
+      "stairs": {"up": {"x": 7, "y": 1}, "down": {"x": 7, "y": 13}},
+      "special_features": ["弓箭手敌人：远程攻击，需要优先击杀"]
+    },
+    {
+      "floor_id": 9,
+      "name": "试炼之塔 - 第 9 层",
+      "difficulty": "困难",
+      "size": {"width": 15, "height": 15},
+      "enemies": [
+        {"id": "knight", "x": 3, "y": 3},
+        {"id": "knight", "x": 11, "y": 3},
+        {"id": "wolf", "x": 7, "y": 7},
+        {"id": "wolf", "x": 3, "y": 11},
+        {"id": "wolf", "x": 11, "y": 11},
+        {"id": "goblin_archer", "x": 5, "y": 5},
+        {"id": "goblin_archer", "x": 9, "y": 5}
+      ],
+      "items": [
+        {"id": "potion_huge", "x": 1, "y": 5},
+        {"id": "shield_steel", "x": 13, "y": 5},
+        {"id": "key_blue", "x": 7, "y": 10},
+        {"id": "gem_red_large", "x": 1, "y": 13}
+      ],
+      "doors": [
+        {"type": "blue", "x": 7, "y": 1, "locked": true},
+        {"type": "red", "x": 7, "y": 13, "locked": false}
+      ],
+      "stairs": {"up": {"x": 7, "y": 1}, "down": {"x": 7, "y": 13}},
+      "npcs": [
+        {"id": "merchant", "x": 13, "y": 13, "dialog": "有缘人，我这里有你需要东西..."}
+      ],
+      "special_features": ["神秘商人：可购买稀有道具"]
+    },
+    {
+      "floor_id": 10,
+      "name": "试炼之塔 - 第 10 层",
+      "difficulty": "Boss 层",
+      "size": {"width": 15, "height": 15},
+      "layout": [
+        [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+        [1,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
+        [1,2,0,0,0,0,0,0,0,0,0,0,0,2,1],
+        [1,2,0,0,0,0,0,0,0,0,0,0,0,2,1],
+        [1,2,0,0,0,0,0,0,0,0,0,0,0,2,1],
+        [1,2,0,0,0,0,0,0,0,0,0,0,0,2,1],
+        [1,2,0,0,0,0,0,0,0,0,0,0,0,2,1],
+        [1,2,0,0,0,0,0,0,0,0,0,0,0,2,1],
+        [1,2,0,0,0,0,0,0,0,0,0,0,0,2,1],
+        [1,2,0,0,0,0,0,0,0,0,0,0,0,2,1],
+        [1,2,0,0,0,0,0,0,0,0,0,0,0,2,1],
+        [1,2,0,0,0,0,0,0,0,0,0,0,0,2,1],
+        [1,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
+        [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+        [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+      ],
+      "enemies": [
+        {"id": "boss_guard_knight", "x": 7, "y": 7, "is_boss": true},
+        {"id": "knight", "x": 3, "y": 5},
+        {"id": "knight", "x": 11, "y": 5},
+        {"id": "knight", "x": 3, "y": 9},
+        {"id": "knight", "x": 11, "y": 9}
+      ],
+      "items": [
+        {"id": "potion_huge", "x": 1, "y": 7},
+        {"id": "sword_magic", "x": 13, "y": 7},
+        {"id": "key_magic", "x": 7, "y": 2},
+        {"id": "gem_purple_large", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "magic", "x": 7, "y": 1, "locked": true},
+        {"type": "blue", "x": 7, "y": 13, "locked": false}
+      ],
+      "stairs": {"up": {"x": 7, "y": 1}, "down": {"x": 7, "y": 13}},
+      "npcs": [
+        {"id": "princess", "x": 1, "y": 1, "dialog": "谢谢你救了我！但这只是塔的开始...前方还有更多挑战等待着你。这把魔法钥匙可以打开上层的大门。"}
+      ],
+      "special_features": [
+        "Boss 战：守护骑士（高血量高攻击）",
+        "先清理 4 个护卫骑士再挑战 Boss",
+        "击败 Boss 后解救公主，获得魔法钥匙"
+      ],
+      "boss_info": {
+        "id": "boss_guard_knight",
+        "name": "守护骑士",
+        "hp": 500,
+        "attack": 80,
+        "defense": 50,
+        "reward": ["魔法钥匙", "大量金币"]
+      }
+    }
+  ],
+  "design_notes": {
+    "difficulty_curve": "6-8 层逐步提升难度，9 层引入商人机制，10 层 Boss 战",
+    "new_enemies": ["wolf(狼)", "goblin_archer(哥布林弓箭手)", "knight(骑士)", "boss_guard_knight(守护骑士)"],
+    "new_items": ["potion_huge(超大血瓶)", "gem_red_large(大红宝石)", "gem_blue_medium(中蓝宝石)", "gem_purple_large(大紫宝石)", "sword_magic(魔法剑)", "key_magic(魔法钥匙)"],
+    "new_mechanics": ["陷阱区域", "隐藏房间", "远程敌人", "Boss 战", "商人系统"],
+    "progression": "10 层后进入迷雾之塔区域 (11-20 层)"
+  }
+}
