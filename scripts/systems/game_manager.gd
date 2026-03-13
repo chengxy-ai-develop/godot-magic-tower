@@ -1,163 +1,383 @@
 extends Node
 class_name GameManager
 
-## 游戏管理器 - 全局游戏状态管理
+## 游戏管理器 - 处理游戏流程、状态和战斗
 
 # 信号
-signal game_started()
-signal game_saved(slot: int)
-signal game_loaded(slot: int)
+signal game_started
+signal game_over
+signal game_won
 signal floor_changed(floor_id: int)
-
-# 单例实例
-static var instance: GameManager
+signal battle_started(enemy_data: Dictionary)
+signal battle_won(rewards: Dictionary)
+signal battle_lost
 
 # 游戏状态
-var current_floor: int = 1
-var game_state: Dictionary = {}
-var save_slots: int = 3  # 存档槽数量
+enum GameState { MENU, PLAYING, BATTLE, DIALOG, GAME_OVER, VICTORY }
+var current_state: GameState = GameState.MENU
 
-# 游戏配置
-var game_config: Dictionary = {
-	"screen_width": 1280,
-	"screen_height": 720,
-	"fullscreen": false,
-	"sound_enabled": true,
-	"music_enabled": true,
-	"auto_battle": false
+# 玩家引用
+var player: Node
+var ui_manager: Node
+var map_loader: Node
+var save_system: Node
+
+# 战斗配置
+var battle_config: Dictionary = {
+	"auto_battle": false,
+	"show_damage": true,
+	"speed_multiplier": 1.0
+}
+
+# 游戏数据
+var game_data: Dictionary = {
+	"start_time": 0,
+	"play_time": 0,
+	"deaths": 0,
+	"monsters_defeated": 0,
+	"items_collected": 0
 }
 
 func _ready() -> void:
-	# 设置为单例
-	instance = self
 	print("[GameManager] 游戏管理器初始化完成")
+	_find_references()
+	_connect_signals()
+
+func _find_references() -> void:
+	"""
+	查找场景引用
+	"""
+	player = get_node_or_null("../Player")
+	ui_manager = get_node_or_null("../UILayer/UIManager")
+	map_loader = get_node_or_null("../MapLoader")
+	save_system = get_node_or_null("../SaveSystem")
+
+func _connect_signals() -> void:
+	"""
+	连接信号
+	"""
+	if player:
+		player.connect("player_damaged", _on_player_damaged)
+		player.connect("floor_changed", _on_floor_changed)
+		player.connect("player_died", _on_player_died)
+
+func _on_player_damaged(damage: int) -> void:
+	"""
+	玩家受伤处理
+	"""
+	print("[GameManager] 玩家受伤：", damage)
+
+func _on_floor_changed(floor_id: int) -> void:
+	"""
+	楼层变化处理
+	"""
+	floor_changed.emit(floor_id)
+	print("[GameManager] 到达第 ", floor_id, " 层")
 	
-	# 加载配置
-	_load_config()
+	# 检查胜利条件
+	if floor_id == 50:
+		_start_final_battle()
 
-func _load_config() -> void:
+func _on_player_died() -> void:
 	"""
-	加载游戏配置
+	玩家死亡处理
 	"""
-	var config_path = "user://game_config.cfg"
-	if FileAccess.file_exists(config_path):
-		var config = ConfigFile.new()
-		config.load(config_path)
-		# 加载配置项...
+	game_data["deaths"] += 1
+	game_over.emit()
+	set_state(GameState.GAME_OVER)
+	
+	print("[GameManager] 游戏结束")
+	print("  死亡次数：", game_data["deaths"])
+	print("  游戏时间：", game_data["play_time"], " 秒")
 
-func start_new_game() -> void:
+func _process(delta: float) -> void:
+	"""
+	游戏流程处理
+	"""
+	if current_state == GameState.PLAYING:
+		game_data["play_time"] += delta
+
+func start_game() -> void:
 	"""
 	开始新游戏
 	"""
-	game_state = {
-		"player": {
-			"hp": 1000,
-			"max_hp": 1000,
-			"attack": 10,
-			"defense": 10,
-			"gold": 0,
-			"experience": 0,
-			"floor": 1,
-			"keys": {"yellow": 0, "blue": 0, "red": 0}
-		},
-		"inventory": [],
-		"flags": {},
-		"play_time": 0
+	print("[GameManager] 开始新游戏")
+	
+	# 重置玩家状态
+	if player:
+		player.current_hp = player.max_hp
+		player.attack = 10
+		player.defense = 10
+		player.gold = 0
+		player.experience = 0
+		player.level = 1
+		player.current_floor = 1
+		player.position_grid = Vector2i(7, 7)
+	
+	# 重置游戏数据
+	game_data = {
+		"start_time": Time.get_unix_time_from_system(),
+		"play_time": 0,
+		"deaths": 0,
+		"monsters_defeated": 0,
+		"items_collected": 0
 	}
 	
-	current_floor = 1
+	# 加载第 1 层
+	if map_loader:
+		map_loader.load_floor(1)
+	
+	set_state(GameState.PLAYING)
 	game_started.emit()
-	print("[GameManager] 新游戏开始")
+	
+	# 显示欢迎对话
+	if ui_manager:
+		ui_manager.show_dialog("欢迎来到魔塔！目标是到达第 50 层...", true, 3.0)
+
+func load_game(slot: int) -> bool:
+	"""
+	加载存档
+	"""
+	if not save_system:
+		return false
+	
+	var data = save_system.load_game(slot)
+	if data.is_empty():
+		return false
+	
+	# 恢复玩家状态
+	if player and data.has("player"):
+		player.load_stats(data["player"])
+	
+	# 恢复游戏数据
+	if data.has("game_data"):
+		game_data = data["game_data"]
+	
+	# 加载楼层
+	if data.has("floor"):
+		if map_loader:
+			map_loader.load_floor(data["floor"])
+	
+	set_state(GameState.PLAYING)
+	print("[GameManager] 游戏已加载")
+	return true
 
 func save_game(slot: int) -> bool:
 	"""
 	保存游戏
 	"""
-	var save_path = "user://save_%d.dat" % slot
-	var save_data = {
-		"version": "1.0",
-		"timestamp": Time.get_unix_time_from_system(),
-		"game_state": game_state,
-		"current_floor": current_floor
+	if not save_system:
+		return false
+	
+	var game_state = {
+		"player": player.get_stats() if player else {},
+		"floor": player.current_floor if player else 1,
+		"game_data": game_data
 	}
 	
-	var file = FileAccess.open(save_path, FileAccess.WRITE)
-	if file:
-		file.store_var(save_data)
-		file.close()
-		game_saved.emit(slot)
-		print("[GameManager] 游戏已保存到槽位 ", slot)
-		return true
+	return save_system.save_game(slot, game_state)
+
+func set_state(new_state: GameState) -> void:
+	"""
+	设置游戏状态
+	"""
+	current_state = new_state
+	print("[GameManager] 状态变更：", GameState.keys()[new_state])
+
+func start_battle(enemy_data: Dictionary) -> void:
+	"""
+	开始战斗
+	"""
+	set_state(GameState.BATTLE)
+	battle_started.emit(enemy_data)
+	
+	print("[GameManager] 战斗开始")
+	print("  敌人：", enemy_data.get("name", "未知"))
+	print("  HP: ", enemy_data.get("stats", {}).get("hp", 0))
+	print("  攻击：", enemy_data.get("stats", {}).get("attack", 0))
+	print("  防御：", enemy_data.get("stats", {}).get("defense", 0))
+	
+	# 显示战斗 UI
+	if ui_manager and ui_manager.has_method("start_battle_ui"):
+		var enemy_stats = enemy_data.get("stats", {})
+		ui_manager.start_battle_ui(
+			enemy_data.get("name", "敌人"),
+			enemy_stats.get("hp", 0),
+			player.current_hp if player else 1000
+		)
+	
+	# 执行战斗计算
+	if battle_config.auto_battle:
+		_resolve_battle_auto(enemy_data)
 	else:
-		print("[GameManager] 保存失败：", save_path)
-		return false
+		_resolve_battle_manual(enemy_data)
 
-func load_game(slot: int) -> bool:
+func _resolve_battle_auto(enemy_data: Dictionary) -> void:
 	"""
-	加载游戏
+	自动战斗（快速计算）
 	"""
-	var save_path = "user://save_%d.dat" % slot
-	if not FileAccess.file_exists(save_path):
-		print("[GameManager] 存档不存在：", save_path)
-		return false
+	var player_stats = player.get_stats() if player else {}
+	var enemy_stats = enemy_data.get("stats", {})
 	
-	var file = FileAccess.open(save_path, FileAccess.READ)
-	if file:
-		var save_data = file.get_var()
-		file.close()
-		
-		game_state = save_data["game_state"]
-		current_floor = save_data["current_floor"]
-		
-		game_loaded.emit(slot)
-		print("[GameManager] 游戏已从槽位 ", slot, " 加载")
-		return true
+	var player_hp = player_stats.get("hp", 1000)
+	var player_atk = player_stats.get("attack", 10)
+	var player_def = player_stats.get("defense", 10)
 	
-	return false
+	var enemy_hp = enemy_stats.get("hp", 100)
+	var enemy_atk = enemy_stats.get("attack", 20)
+	var enemy_def = enemy_stats.get("defense", 5)
+	
+	# 计算伤害
+	var player_damage = max(0, player_atk - enemy_def)
+	var enemy_damage = max(0, enemy_atk - player_def)
+	
+	print("[Battle] 玩家每次伤害：", player_damage)
+	print("[Battle] 敌人每次伤害：", enemy_damage)
+	
+	if player_damage <= 0:
+		# 无法破防，必败
+		_battle_lost(enemy_data)
+		return
+	
+	# 计算回合数
+	var turns_to_kill_enemy = ceil(float(enemy_hp) / player_damage)
+	var turns_to_kill_player = ceil(float(player_hp) / enemy_damage) if enemy_damage > 0 else 999
+	
+	print("[Battle] 击杀敌人需要：", turns_to_kill_enemy, " 回合")
+	print("[Battle] 敌人击杀你需要：", turns_to_kill_player, " 回合")
+	
+	# 计算总伤害
+	var total_damage = enemy_damage * (turns_to_kill_enemy - 1)
+	
+	if total_damage >= player_hp:
+		_battle_lost(enemy_data)
+	else:
+		_battle_won(enemy_data, total_damage)
 
-func has_save(slot: int) -> bool:
+func _resolve_battle_manual(enemy_data: Dictionary) -> void:
 	"""
-	检查存档是否存在
+	手动战斗（回合制）
 	"""
-	var save_path = "user://save_%d.dat" % slot
-	return FileAccess.file_exists(save_path)
+	# 简化实现，使用自动战斗逻辑
+	_resolve_battle_auto(enemy_data)
 
-func change_floor(new_floor: int) -> void:
+func _battle_won(enemy_data: Dictionary, damage_taken: int) -> void:
 	"""
-	切换楼层
+	战斗胜利处理
 	"""
-	current_floor = new_floor
-	floor_changed.emit(new_floor)
-	print("[GameManager] 切换到第 ", new_floor, " 层")
+	var enemy_stats = enemy_data.get("stats", {})
+	
+	# 玩家扣血
+	if player:
+		player.take_damage(damage_taken)
+	
+	# 奖励
+	var rewards = {
+		"gold": enemy_stats.get("gold", 0),
+		"experience": enemy_stats.get("experience", 0)
+	}
+	
+	if player:
+		player.gain_gold(rewards.gold)
+		player.gain_experience(rewards.experience)
+	
+	game_data["monsters_defeated"] += 1
+	
+	print("[GameManager] 战斗胜利！")
+	print("  获得金币：", rewards.gold)
+	print("  获得经验：", rewards.experience)
+	
+	# 更新 UI
+	if ui_manager and ui_manager.has_method("end_battle_ui"):
+		ui_manager.end_battle_ui({"won": true, "gold": rewards.gold, "experience": rewards.experience})
+	
+	battle_won.emit(rewards)
+	set_state(GameState.PLAYING)
+	
+	# 从地图移除敌人
+	if map_loader and map_loader.has_method("remove_enemy"):
+		map_loader.remove_enemy(enemy_data)
 
-func get_game_state() -> Dictionary:
+func _battle_lost(enemy_data: Dictionary) -> void:
 	"""
-	获取游戏状态
+	战斗失败处理
 	"""
-	return game_state.duplicate(true)
+	print("[GameManager] 战斗失败！")
+	
+	if ui_manager and ui_manager.has_method("end_battle_ui"):
+		ui_manager.end_battle_ui({"won": false})
+	
+	battle_lost.emit()
+	
+	# 玩家死亡
+	if player:
+		player._die()
 
-func set_flag(flag_name: String, value: Variant) -> void:
+func _start_final_battle() -> void:
 	"""
-	设置游戏标记
+	最终 Boss 战
 	"""
-	game_state["flags"][flag_name] = value
+	print("[GameManager] 最终 Boss 战！")
+	
+	var final_boss = {
+		"id": "guardian_final",
+		"name": "最终守护者",
+		"stats": {
+			"hp": 1500,
+			"attack": 150,
+			"defense": 80,
+			"gold": 500,
+			"experience": 200
+		}
+	}
+	
+	start_battle(final_boss)
 
-func get_flag(flag_name: String, default: Variant = null) -> Variant:
+func check_victory() -> void:
 	"""
-	获取游戏标记
+	检查胜利条件
 	"""
-	return game_state["flags"].get(flag_name, default)
+	if player and player.current_floor == 50:
+		_victory()
 
-func update_play_time(delta: float) -> void:
+func _victory() -> void:
 	"""
-	更新游戏时间
+	胜利处理
 	"""
-	if game_state.has("play_time"):
-		game_state["play_time"] += delta
+	set_state(GameState.VICTORY)
+	game_won.emit()
+	
+	print("[GameManager] 恭喜通关！")
+	print("  游戏时间：", game_data["play_time"], " 秒")
+	print("  击败怪物：", game_data["monsters_defeated"])
+	print("  死亡次数：", game_data["deaths"])
+	
+	if ui_manager:
+		ui_manager.show_dialog("恭喜！你成功登上了魔塔之巅！", true, 5.0)
+
+func pause_game() -> void:
+	"""
+	暂停游戏
+	"""
+	get_tree().paused = true
+	print("[GameManager] 游戏暂停")
+
+func resume_game() -> void:
+	"""
+	恢复游戏
+	"""
+	get_tree().paused = false
+	print("[GameManager] 游戏恢复")
 
 func quit_game() -> void:
 	"""
 	退出游戏
 	"""
-	print("[GameManager] 游戏退出")
+	print("[GameManager] 退出游戏")
 	get_tree().quit()
+
+func get_game_data() -> Dictionary:
+	"""
+	获取游戏数据
+	"""
+	return game_data.duplicate()
