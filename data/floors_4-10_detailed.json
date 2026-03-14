@@ -1,0 +1,215 @@
+{
+  "version": "1.1",
+  "updated": "2026-03-14 11:20",
+  "region": "试炼之塔 (1-10 层)",
+  "description": "新手区域，逐步引入游戏机制",
+  "floors": [
+    {
+      "floor_id": 4,
+      "name": "试炼之塔 - 第 4 层",
+      "difficulty": "简单+",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "slime", "x": 4, "y": 4},
+        {"id": "slime", "x": 12, "y": 4},
+        {"id": "bat", "x": 6, "y": 8},
+        {"id": "bat", "x": 10, "y": 8},
+        {"id": "bat", "x": 8, "y": 6},
+        {"id": "skeleton", "x": 5, "y": 12},
+        {"id": "skeleton", "x": 11, "y": 12}
+      ],
+      "items": [
+        {"id": "potion_small", "x": 1, "y": 8},
+        {"id": "potion_small", "x": 15, "y": 8},
+        {"id": "gem_blue", "x": 8, "y": 14},
+        {"id": "sword_iron", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "blue", "x": 8, "y": 1, "locked": true},
+        {"type": "yellow", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["蓝门需要蓝钥匙"]
+    },
+    {
+      "floor_id": 5,
+      "name": "试炼之塔 - 第 5 层",
+      "difficulty": "中等",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "bat", "x": 4, "y": 4},
+        {"id": "bat", "x": 12, "y": 4},
+        {"id": "bat", "x": 6, "y": 12},
+        {"id": "bat", "x": 10, "y": 12},
+        {"id": "skeleton", "x": 8, "y": 8},
+        {"id": "skeleton", "x": 5, "y": 5},
+        {"id": "skeleton", "x": 11, "y": 5},
+        {"id": "mage_apprentice", "x": 8, "y": 4}
+      ],
+      "items": [
+        {"id": "potion_medium", "x": 1, "y": 8},
+        {"id": "gem_red", "x": 15, "y": 8},
+        {"id": "key_blue", "x": 8, "y": 14, "count": 2},
+        {"id": "potion_small", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "yellow", "x": 8, "y": 1, "locked": true},
+        {"type": "blue", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["传送阵 ×2 (3,8)↔(13,8)", "陷阱 ×3 (7,7)/(9,7)/(8,10)"]
+    },
+    {
+      "floor_id": 6,
+      "name": "试炼之塔 - 第 6 层",
+      "difficulty": "中等",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "skeleton", "x": 4, "y": 4},
+        {"id": "skeleton", "x": 12, "y": 4},
+        {"id": "skeleton", "x": 5, "y": 12},
+        {"id": "skeleton", "x": 11, "y": 12},
+        {"id": "mage_apprentice", "x": 8, "y": 5},
+        {"id": "mage_apprentice", "x": 8, "y": 11},
+        {"id": "golem_stone", "x": 8, "y": 8}
+      ],
+      "items": [
+        {"id": "potion_medium", "x": 1, "y": 8},
+        {"id": "potion_medium", "x": 15, "y": 8},
+        {"id": "key_yellow", "x": 8, "y": 14},
+        {"id": "shield_iron", "x": 1, "y": 1}
+      ],
+      "doors": [
+        {"type": "blue", "x": 8, "y": 1, "locked": true},
+        {"type": "yellow", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "npcs": [
+        {"id": "merchant", "x": 15, "y": 15, "dialog": "欢迎来到我的商店！买点什么吗？", "shop": true}
+      ],
+      "special_features": ["商人 NPC (位置 15,15)", "商店功能解锁"]
+    },
+    {
+      "floor_id": 7,
+      "name": "试炼之塔 - 第 7 层",
+      "difficulty": "中等+",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "mage_apprentice", "x": 5, "y": 5},
+        {"id": "mage_apprentice", "x": 11, "y": 5},
+        {"id": "mage_apprentice", "x": 8, "y": 8},
+        {"id": "golem_stone", "x": 5, "y": 12},
+        {"id": "golem_stone", "x": 11, "y": 12},
+        {"id": "guard", "x": 8, "y": 4}
+      ],
+      "items": [
+        {"id": "key_blue", "x": 1, "y": 8, "count": 2},
+        {"id": "key_blue", "x": 15, "y": 8},
+        {"id": "key_yellow", "x": 8, "y": 14, "count": 2},
+        {"id": "key_red", "x": 1, "y": 1},
+        {"id": "potion_large", "x": 15, "y": 1}
+      ],
+      "doors": [
+        {"type": "blue", "x": 6, "y": 1, "locked": true},
+        {"type": "blue", "x": 10, "y": 1, "locked": true},
+        {"type": "yellow", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["多色钥匙管理", "蓝门 ×2", "需要合理规划钥匙"]
+    },
+    {
+      "floor_id": 8,
+      "name": "试炼之塔 - 第 8 层",
+      "difficulty": "困难",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "guard", "x": 5, "y": 5},
+        {"id": "guard", "x": 11, "y": 5},
+        {"id": "guard", "x": 8, "y": 8},
+        {"id": "golem_stone", "x": 5, "y": 12},
+        {"id": "golem_stone", "x": 11, "y": 12},
+        {"id": "golem_stone", "x": 8, "y": 4},
+        {"id": "dark_knight", "x": 8, "y": 11}
+      ],
+      "items": [
+        {"id": "potion_medium", "x": 1, "y": 8},
+        {"id": "potion_medium", "x": 15, "y": 8},
+        {"id": "potion_large", "x": 8, "y": 14},
+        {"id": "gem_red", "x": 1, "y": 1},
+        {"id": "gem_red", "x": 15, "y": 1},
+        {"id": "sword_steel", "x": 1, "y": 15}
+      ],
+      "doors": [
+        {"type": "yellow", "x": 8, "y": 1, "locked": true},
+        {"type": "blue", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["多路径设计 (3 条路)", "隐藏房间 (1,8)", "传送阵 ×2"]
+    },
+    {
+      "floor_id": 9,
+      "name": "试炼之塔 - 第 9 层",
+      "difficulty": "困难+",
+      "size": {"width": 17, "height": 17},
+      "enemies": [
+        {"id": "dark_knight", "x": 5, "y": 5},
+        {"id": "dark_knight", "x": 11, "y": 5},
+        {"id": "magic_guard", "x": 5, "y": 12},
+        {"id": "magic_guard", "x": 11, "y": 12},
+        {"id": "elite_guard", "x": 8, "y": 8},
+        {"id": "guard", "x": 8, "y": 4},
+        {"id": "guard", "x": 8, "y": 14}
+      ],
+      "items": [
+        {"id": "potion_large", "x": 1, "y": 8},
+        {"id": "potion_large", "x": 15, "y": 8},
+        {"id": "key_red", "x": 8, "y": 14, "count": 2},
+        {"id": "shield_steel", "x": 1, "y": 1},
+        {"id": "gem_yellow", "x": 15, "y": 1}
+      ],
+      "doors": [
+        {"type": "red", "x": 6, "y": 1, "locked": true},
+        {"type": "red", "x": 10, "y": 1, "locked": true},
+        {"type": "yellow", "x": 8, "y": 15, "locked": false}
+      ],
+      "stairs": {"up": {"x": 8, "y": 1}, "down": {"x": 8, "y": 15}},
+      "special_features": ["精英敌人挑战", "红门 ×2", "击败精英获得特殊道具"]
+    },
+    {
+      "floor_id": 10,
+      "name": "试炼之塔 - 第 10 层 (Boss 层)",
+      "difficulty": "Boss",
+      "size": {"width": 21, "height": 21},
+      "enemies": [
+        {"id": "magic_guard", "x": 6, "y": 10},
+        {"id": "magic_guard", "x": 14, "y": 10},
+        {"id": "elite_guard", "x": 10, "y": 6},
+        {"id": "elite_guard", "x": 10, "y": 14},
+        {"id": "boss_guardian_knight", "x": 10, "y": 10, "is_boss": true}
+      ],
+      "items": [
+        {"id": "potion_legendary", "x": 1, "y": 10},
+        {"id": "key_red", "x": 19, "y": 10},
+        {"id": "gem_diamond", "x": 1, "y": 1},
+        {"id": "guardian_proof", "x": 19, "y": 19}
+      ],
+      "doors": [
+        {"type": "red", "x": 10, "y": 1, "locked": true},
+        {"type": "yellow", "x": 10, "y": 19, "locked": false}
+      ],
+      "stairs": {"up": {"x": 10, "y": 1}, "down": {"x": 10, "y": 19}},
+      "special_features": ["Boss 战：守护骑士", "击败后解锁迷雾之塔 (11-20 层)", "获得守护者之证"],
+      "boss_info": {
+        "id": "boss_guardian_knight",
+        "name": "守护骑士",
+        "hp": 500,
+        "attack": 80,
+        "defense": 50,
+        "gold": 500,
+        "experience": 200,
+        "special": ["重击 (1.5 倍伤害)", "盾击 (眩晕 1 回合)"],
+        "reward": ["守护者之证", "500 金币", "传说药水"]
+      }
+    }
+  ]
+}
