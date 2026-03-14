@@ -1,150 +1,124 @@
 extends CharacterBody2D
 class_name PlayerController
 
-## 玩家控制器 - 处理玩家移动和基础交互
+## 玩家控制器 - 处理玩家移动和输入
+## 附加到 Player.tscn
 
-# 信号
-signal floor_changed(floor_id: int)
-signal item_collected(item_id: String)
-signal battle_started(enemy_id: String)
+@export var speed: float = 200.0
+@export var hp: int = 100
+@export var max_hp: int = 100
+@export var attack: int = 10
+@export var defense: int = 10
 
-# 导出变量
-@export var move_speed: float = 200.0
-@export var can_move: bool = true
+var keys: Dictionary = {}
+var items: Array = []
 
-# 玩家属性
-var player_data: Dictionary = {
-	"hp": 1000,
-	"max_hp": 1000,
-	"attack": 10,
-	"defense": 10,
-	"gold": 0,
-	"experience": 0,
-	"floor": 1,
-	"keys": {
-		"yellow": 0,
-		"blue": 0,
-		"red": 0
-	}
-}
-
-# 内部变量
-var _is_in_battle: bool = false
-var _current_floor: int = 1
 
 func _ready() -> void:
-	print("[Player] 玩家控制器初始化完成")
+	print("[Player] 初始化完成")
+	print("[Player] HP: ", hp, "/", max_hp)
+	print("[Player] ATK: ", attack, " DEF: ", defense)
 
-func _physics_process(delta: float) -> void:
-	if not can_move or _is_in_battle:
-		return
-	
-	_handle_movement()
 
-func _handle_movement() -> void:
-	var input_direction := Vector2.ZERO
-	
-	input_direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	input_direction.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
-	
-	if input_direction != Vector2.ZERO:
-		input_direction = input_direction.normalized()
-	
-	velocity = input_direction * move_speed
+func _physics_process(_delta: float) -> void:
+	_handle_input()
 	move_and_slide()
 
-func move_to(direction: Vector2) -> bool:
-	"""
-	尝试向指定方向移动
-	返回：是否成功移动
-	"""
-	if not can_move or _is_in_battle:
-		return false
+
+func _handle_input() -> void:
+	var input_direction := Vector2.ZERO
 	
-	var target_position = global_position + direction * 32  # 假设格子大小为 32
+	if Input.is_action_pressed("ui_up") or Input.is_key_pressed(KEY_W):
+		input_direction.y -= 1
+	if Input.is_action_pressed("ui_down") or Input.is_key_pressed(KEY_S):
+		input_direction.y += 1
+	if Input.is_action_pressed("ui_left") or Input.is_key_pressed(KEY_A):
+		input_direction.x -= 1
+	if Input.is_action_pressed("ui_right") or Input.is_key_pressed(KEY_D):
+		input_direction.x += 1
 	
-	# 这里需要添加碰撞检测和事件触发
-	# 暂时简化处理
-	global_position = target_position
-	return true
+	velocity = input_direction.normalized() * speed
 
-func collect_item(item_id: String, item_data: Dictionary) -> void:
-	"""
-	收集物品
-	"""
-	print("[Player] 收集物品：", item_id)
-	item_collected.emit(item_id)
+
+## 受到伤害
+func take_damage(amount: int) -> int:
+	var actual_damage = max(1, amount - defense)
+	hp = max(0, hp - actual_damage)
+	print("[Player] 受到伤害：", actual_damage, " 剩余 HP: ", hp)
 	
-	# 应用物品效果
-	if item_data.has("effect"):
-		_apply_item_effect(item_data["effect"])
-
-func _apply_item_effect(effect: Dictionary) -> void:
-	"""
-	应用物品效果
-	"""
-	if effect.has("hp"):
-		player_data["hp"] = min(player_data["hp"] + effect["hp"], player_data["max_hp"])
-	if effect.has("attack"):
-		player_data["attack"] += effect["attack"]
-	if effect.has("defense"):
-		player_data["defense"] += effect["defense"]
-	if effect.has("gold"):
-		player_data["gold"] += effect["gold"]
-
-func start_battle(enemy_id: String) -> void:
-	"""
-	开始战斗
-	"""
-	_is_in_battle = true
-	can_move = false
-	battle_started.emit(enemy_id)
-
-func end_battle(result: Dictionary) -> void:
-	"""
-	结束战斗
-	"""
-	_is_in_battle = false
-	can_move = true
+	if hp <= 0:
+		_on_death()
 	
-	# 应用战斗结果
-	if result.has("gold"):
-		player_data["gold"] += result["gold"]
-	if result.has("experience"):
-		player_data["experience"] += result["experience"]
+	return actual_damage
 
-func change_floor(new_floor: int) -> void:
-	"""
-  切换楼层
-	"""
-	_current_floor = new_floor
-	player_data["floor"] = new_floor
-	floor_changed.emit(new_floor)
-	print("[Player] 到达第 ", new_floor, " 层")
 
-func get_player_data() -> Dictionary:
-	"""
-	获取玩家数据
-	"""
-	return player_data.duplicate(true)
+## 治疗
+func heal(amount: int) -> void:
+	hp = min(max_hp, hp + amount)
+	print("[Player] 治疗：", amount, " 当前 HP: ", hp)
 
-func save_data() -> Dictionary:
-	"""
-	保存玩家数据
-	"""
+
+## 死亡处理
+func _on_death() -> void:
+	print("[Player] 死亡!")
+	if GameManager:
+		GameManager.player_death()
+
+
+## 添加钥匙
+func add_key(key_type: String, count: int = 1) -> void:
+	if not keys.has(key_type):
+		keys[key_type] = 0
+	keys[key_type] += count
+	print("[Player] 获得钥匙：", key_type, " x", count)
+
+
+## 使用钥匙
+func use_key(key_type: String) -> bool:
+	if keys.has(key_type) and keys[key_type] > 0:
+		keys[key_type] -= 1
+		print("[Player] 使用钥匙：", key_type)
+		return true
+	return false
+
+
+## 添加物品
+func add_item(item_id: String) -> void:
+	if not items.has(item_id):
+		items.append(item_id)
+	print("[Player] 获得物品：", item_id)
+
+
+## 检查是否有物品
+func has_item(item_id: String) -> bool:
+	return items.has(item_id)
+
+
+## 获取玩家数据 (用于存档)
+func get_data() -> Dictionary:
 	return {
-		"player_data": player_data,
-		"position": global_position,
-		"floor": _current_floor
+		"hp": hp,
+		"max_hp": max_hp,
+		"attack": attack,
+		"defense": defense,
+		"keys": keys.duplicate(),
+		"items": items.duplicate()
 	}
 
-func load_data(data: Dictionary) -> void:
-	"""
-	加载玩家数据
-	"""
-	if data.has("player_data"):
-		player_data = data["player_data"]
-	if data.has("position"):
-		global_position = data["position"]
-	if data.has("floor"):
-		_current_floor = data["floor"]
+
+## 设置玩家数据 (用于读档)
+func set_data(data: Dictionary) -> void:
+	if data.has("hp"):
+		hp = data["hp"]
+	if data.has("max_hp"):
+		max_hp = data["max_hp"]
+	if data.has("attack"):
+		attack = data["attack"]
+	if data.has("defense"):
+		defense = data["defense"]
+	if data.has("keys"):
+		keys = data["keys"].duplicate()
+	if data.has("items"):
+		items = data["items"].duplicate()
+	
+	print("[Player] 数据已加载")
