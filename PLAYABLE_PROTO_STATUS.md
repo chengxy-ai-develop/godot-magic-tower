@@ -1,7 +1,7 @@
 # 🎮 Godot 魔塔 - 可玩原型开发状态
 
-**更新时间:** 2026-03-14 08:15  
-**状态:** UI 系统完善中
+**更新时间:** 2026-03-14 11:15  
+**状态:** 可玩原型完成 (1-3 层) ✅
 
 ---
 
@@ -46,75 +46,70 @@
 
 ---
 
-## 🔄 待整合内容
+## ✅ 已整合内容 (11:15 更新)
 
-### 场景文件 (需要创建)
-- [ ] `scenes/Main.tscn` - 主场景
-- [ ] `scenes/Game.tscn` - 游戏场景
-- [ ] `scenes/UILayer.tscn` - UI 层
-- [ ] `scenes/Player.tscn` - 玩家场景
-- [ ] `scenes/enemies/` - 敌人场景
-- [ ] `scenes/items/` - 道具场景
+### 场景文件 (100% 完成)
+- [x] `scenes/Main.tscn` - 主场景 ✅
+- [x] `scenes/Game.tscn` - 游戏场景 ✅
+- [x] `scenes/UILayer.tscn` - UI 层 ✅
+- [x] `scenes/Player.tscn` - 玩家场景 ✅
+- [x] `scenes/enemies/` - 敌人场景框架 ✅
+- [x] `scenes/items/` - 道具场景框架 ✅
 
-### 输入映射 (需要在 project.godot 中配置)
-```ini
-[input]
-ui_up={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"echo":false,"script":null)
-]
-}
-ui_down={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"echo":false,"script":null)
-]
-}
-ui_left={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"echo":false,"script":null)
-]
-}
-ui_right={
-"deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"echo":false,"script":null)
-]
-}
-```
+### 输入映射 (100% 完成)
+- [x] WASD 移动 ✅
+- [x] 方向键移动 ✅
+- [x] I 键 - 打开背包 ✅
+- [x] Ctrl+S - 打开状态 ✅
+- [x] ESC - 关闭界面 ✅
 
-### MapLoader (需要完善)
-- [ ] 楼层数据加载
-- [ ] 地图生成
-- [ ] 敌人放置
-- [ ] 道具放置
-- [ ] 碰撞检测
+### MapLoader (100% 完成)
+- [x] 楼层数据加载 ✅
+- [x] 地图生成 (17×17 / 21×21) ✅
+- [x] 敌人放置 ✅
+- [x] 道具放置 ✅
+- [x] 碰撞检测 ✅
+
+### 测试地图 (1-3 层完成)
+- [x] 第 1 层 - 新手教学 ✅
+- [x] 第 2 层 - 基础机关 ✅
+- [x] 第 3 层 - 钥匙和门 ✅
 
 ---
 
 ## 📝 下一步
 
-1. **创建基础场景文件** (TSCN)
-2. **配置 project.godot** (输入映射、窗口设置)
-3. **完善 MapLoader** - 从 JSON 生成地图
-4. **创建测试地图** - 1-3 层可游玩
-5. **整合测试** - 运行游戏，测试移动、战斗、背包
+### 今天下午 (14:00 前)
+1. **完善 4-10 层** - 试炼之塔全流程
+2. **平衡性调整** - 根据测试反馈调整数值
+3. **Boss 战测试** - 第 10 层守护骑士
+
+### 今天内完成
+- [ ] Alpha 版本 - 1-10 层可完整游玩
+- [ ] 发布到 GitHub - 可下载试玩
 
 ---
 
-## 🎯 可玩原型目标
+## 🎯 可玩原型状态
 
-**目标:** 1-10 层可完整游玩
+**当前:** 1-3 层可游玩 ✅
 
 **包含内容:**
-- ✅ 玩家移动和碰撞
-- ✅ 敌人遭遇和战斗
-- ✅ 道具拾取和使用
-- ✅ 上下楼梯
-- ✅ 开门 (钥匙系统)
-- ✅ NPC 对话
-- ✅ 存档/读档
-- ✅ HP 恢复和死亡
+- [x] 玩家移动和碰撞 ✅
+- [x] 敌人遭遇和战斗 ✅
+- [x] 道具拾取和使用 ✅
+- [x] 上下楼梯 ✅
+- [x] 开门 (钥匙系统) ✅
+- [x] NPC 对话 ✅
+- [x] 存档/读档 (3 槽位) ✅
+- [x] HP 恢复和死亡 ✅
+- [x] 背包系统 (按 I) ✅
+- [x] 状态界面 (按 Ctrl+S) ✅
 
-**预计完成时间:** 2026-03-14 12:00
+**GitHub 推送:** ✅ 已成功推送  
+**最新提交:** feat: 完成可玩原型 (1-3 层) + 场景文件整合
+
+**预计完成:** 2026-03-14 14:00 (Alpha 版本)
 
 ---
 
